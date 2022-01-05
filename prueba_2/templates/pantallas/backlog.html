@@ -1,0 +1,31 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/backlog.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div>
+    <a href="{{ acciones_url }}" class="btn btn-primary">Regresar</a>
+</div>
+<h2>{{ sub_title }}</h2>
+<div class="contenedor">
+    <div class="lista-acciones" id="lista-acciones">
+
+    </div>
+</div>
+
+
+
+
+
+
+    <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
+	<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="{% static 'js/backlog.js' %}"></script>
+
+
+{% endblock %}
+

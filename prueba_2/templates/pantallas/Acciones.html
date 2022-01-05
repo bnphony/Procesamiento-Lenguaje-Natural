@@ -1,0 +1,31 @@
+{% extends 'list.html' %}
+{% load static %}
+
+
+{% block head_list %}
+
+    <script src="{% static 'js/accion.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+    <tr>
+        <th scope="col" style="width: 10%">Nro</th>
+        <th scope="col" style="width: 90%">Historias de Usuario</th>
+    </tr>
+
+{% endblock %}
+
+
+{% block rows %}
+    {% for obj in object_list %}
+        <tr>
+            <td>{{ obj.id }}</td>
+            <td>{{ obj.relatoUsuario }}</td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+
+{% block javascript %}
+
+{% endblock %}
+
