@@ -13,12 +13,7 @@ from core.erp.forms import IngresoRelatoUsuarioForm
 
 import speech_recognition as sr
 
-
-
-
 from core.erp.pre_procesar import procesar
-
-
 
 
 class PantallaHola(FormView):
@@ -47,7 +42,6 @@ class Prueba(FormView):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
-
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -107,13 +101,15 @@ class Prueba(FormView):
 
                 # form = self.get_form()
                 # data = form.save()
-
+                # GUARDAR EL REGISTRO
+                print("Se guardo un nuevo registro")
                 auxiliar = Auxiliar(relatoUsuario=texto)
                 auxiliar.save()
 
                 for index, frase in enumerate(acciones):
                     print(frase['usuario'], frase['que'], frase['para_que'])
-                    nuevo = Accion(actor=frase['usuario'], que=frase['que'], para_que=frase['para_que'], posicion=index+1, aux_id=auxiliar.id)
+                    nuevo = Accion(actor=frase['usuario'], que=frase['que'], para_que=frase['para_que'],
+                                   posicion=index + 1, aux_id=auxiliar.id)
                     nuevo.save()
 
                 data['url'] = reverse_lazy('accion')
@@ -124,7 +120,6 @@ class Prueba(FormView):
             data['error'] = str(e)
         return JsonResponse(data, safe=False)
 
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Historia de Usuario'
@@ -133,11 +128,8 @@ class Prueba(FormView):
         return context
 
 
-
 class IndexView(TemplateView):
     template_name = 'index.html'
-
-
 
 
 class Accion_1(ListView):
@@ -148,7 +140,6 @@ class Accion_1(ListView):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
-
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -168,27 +159,6 @@ class Accion_1(ListView):
                     item['para_que'] = frase.para_que
                     item['posicion'] = frase.posicion
                     data.append(item)
-
-                # data = []
-                # acciones = procesar(usuario, variable.relatoUsuario)
-                # for index, frase in enumerate(acciones):
-                #     item = {}
-                #     item['usuario'] = frase['usuario']
-                #     item['que'] = frase['que']
-                #     item['para_que'] = frase['para_que']
-                #     item['posicion'] = index + 1
-                #     data.append(item)
-
-                # data = []
-                # position = 1
-                #
-                # for match in matches:
-                #     span = Span(doc, match[1], match[2], label='ORACION')
-                #     item = {}
-                #     item['relatoUsuario'] = span.text
-                #     item['position'] = position
-                #     data.append(item)
-                #     position += 1
             else:
                 data['error'] = 'Ha ocurrido un error'
         except Exception as e:
@@ -206,6 +176,7 @@ class Accion_1(ListView):
         context['backlog'] = reverse_lazy('backlog')
         return context
 
+
 class Backlog(ListView):
     template_name = 'pantallas/backlog.html'
     model = Auxiliar
@@ -214,7 +185,6 @@ class Backlog(ListView):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
-
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -252,6 +222,7 @@ class Backlog(ListView):
         context['mensaje'] = 'Historias de Usuario'
         return context
 
+
 class Acciones(ListView):
     template_name = 'pantallas/Acciones.html'
     model = Auxiliar
@@ -268,43 +239,6 @@ class Acciones(ListView):
             if action == 'searchdata':
                 print("Hola entro a la accion")
 
-                variable = Auxiliar.objects.all().last()
-                solucion = text_data_cleaning(variable.relatoUsuario)
-                solucion = " ".join(solucion)
-                doc = nlp(solucion)
-                pattern1 = [
-                    {"POS": "PROPN", "OP": "?"},
-                    {"POS": "NOUN", "OP": "?"},
-                    {"IS_ALPHA": True, "OP": "?"},
-                    {"POS": "VERB", "OP": "?"},
-                    {"IS_ALPHA": True, "OP": "?"},
-                    {"POS": "PROPN", "OP": "*"},
-                    {"POS": "NOUN", "OP": "*"},
-                    {"IS_ALPHA": True, "OP": "?"}
-                ]
-
-                matcher.add("PROPER_NOUNS", [pattern1], greedy='LONGEST')
-                matches = matcher(doc)
-                matches.sort(key=lambda x:x[1])
-
-
-                data = []
-                position = 1
-
-                for match in matches:
-                    span = Span(doc, match[1], match[2], label="ORACION")
-                    item = {}
-                    item['relatoUsuario'] = span.text
-                    item['position'] = position
-                    data.append(item)
-                    position += 1
-
-
-                # for i in Auxiliar.objects.all():
-                #     item = i.toJSON()
-                #     item['position'] = position
-                #     data.append(item)
-                #     position += 1
             else:
                 data['error'] = 'Ha ocurrido un error'
         except Exception as e:
