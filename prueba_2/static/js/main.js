@@ -121,7 +121,6 @@ $(function () {
             cache: false,
         }).done(function (data) {
             if(!data.hasOwnProperty('error')){
-
                window.location.href = data['url'];
             }
         }).fail(function (jqYHR, textStatus, errorThrown) {

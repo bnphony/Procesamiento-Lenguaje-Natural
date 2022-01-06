@@ -19,8 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="actualizar el gitignore">
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="primera version nuevos cambio">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/patterns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -125,7 +130,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641420261409</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="actualizar el gitignore">
+      <created>1641420280679</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1641420280679</updated>
+    </task>
+    <task id="LOCAL-00005" summary="primera version nuevos cambio">
+      <created>1641424311827</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1641424311827</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,11 +157,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="agregar el workspacy" />
     <MESSAGE value="actualizar el gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="actualizar el gitignore" />
+    <MESSAGE value="primera version nuevos cambio" />
+    <option name="LAST_COMMIT_MESSAGE" value="primera version nuevos cambio" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635186592894">
@@ -161,22 +182,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1641419602570" />
-    <state width="659" height="171" key="GridCell.Tab.0.bottom" timestamp="1641418876289">
+    <state width="659" height="171" key="GridCell.Tab.0.bottom" timestamp="1641439004278">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="171" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1641418876289" />
-    <state width="659" height="171" key="GridCell.Tab.0.center" timestamp="1641418876287">
+    <state width="659" height="171" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1641439004278" />
+    <state width="659" height="171" key="GridCell.Tab.0.center" timestamp="1641439004278">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="171" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1641418876287" />
-    <state width="659" height="171" key="GridCell.Tab.0.left" timestamp="1641418876287">
+    <state width="659" height="171" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1641439004278" />
+    <state width="659" height="171" key="GridCell.Tab.0.left" timestamp="1641439004278">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="171" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1641418876287" />
-    <state width="659" height="171" key="GridCell.Tab.0.right" timestamp="1641418876287">
+    <state width="659" height="171" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1641439004278" />
+    <state width="659" height="171" key="GridCell.Tab.0.right" timestamp="1641439004278">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="171" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1641418876287" />
+    <state width="659" height="171" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1641439004278" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1641419626005">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -185,10 +206,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1637695963563" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1641420269924">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1641424319110">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641420269924" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641424319110" />
     <state x="667" y="0" width="585" height="728" key="find.popup" timestamp="1638829250643">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

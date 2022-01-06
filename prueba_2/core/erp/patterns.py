@@ -579,6 +579,7 @@ pattern24 = [
 verbo_sus_adp_verb_noun = [
     {"POS": "VERB"},
     {"POS": {"IN": ["ADP", "DET"]}, "OP": "*"},
+    {"POS": "ADJ", "OP": "?"},
     {"POS": {"IN": ["NOUN", "VERB"]}},
     {"POS": "ADJ", "OP": "?"},
     {"POS": "NOUN", "LOWER": {"NOT_IN": ["con el fin", "con la finalidad", "con el objetivo", "con el objeto"]}, "OP": "?"}, # Se agrego el LOWER

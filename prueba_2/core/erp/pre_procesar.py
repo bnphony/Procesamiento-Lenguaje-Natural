@@ -116,22 +116,23 @@ def aplicar_dependencias(doc):
             if (max(match_limpiar[1]) - min(match_limpiar[1])) > 7 or (match_limpiar[1][0] > match_limpiar[1][-1]):
                 matches_erroneos.append(match_limpiar)
 
+
     # Se borra los matches erroneas asegurando que no se salten los valores
     for match in matches_erroneos:
         matches.remove(match)
 
-    preview = []
     tokens_ids = [token for _, token in matches]
+    preview = []
     for index, i in enumerate(tokens_ids):
         preview = i
         for n, oracion in enumerate(tokens_ids[tokens_ids.index(preview) + 1:] + tokens_ids[:tokens_ids.index(preview)]):
-            if (not set(oracion).isdisjoint(preview)):
+            if not set(oracion).isdisjoint(preview):
                 valor = list(set(oracion + preview))
                 tokens_ids[tokens_ids.index(preview)] = valor
-                if (oracion in tokens_ids):
+                if oracion in tokens_ids:
                     tokens_ids.remove(oracion)
                 preview = valor
-                if (doc[preview[0] - 1].dep_ == "mark" and index != 0):
+                if (doc[preview[0]-1].dep_ == "mark" and index != 0):
                     for n, oracion in enumerate(tokens_ids):
                         if ((min(preview) - max(oracion)) in [0, 1, 2]):
                             valor = list(set(oracion + preview))
@@ -144,7 +145,7 @@ def aplicar_dependencias(doc):
                     tokens_ids.remove(oracion)
                 preview = valor
 
-        return tokens_ids
+    return tokens_ids
 
 
 def revisar_oraciones(matcher, revision):
@@ -168,10 +169,8 @@ def revisar_oraciones(matcher, revision):
 
 
 def procesar(usuario, texto):
-    text = text_limpio(texto)
-    text = " ".join(text)
     
-    doc = nlp(text)
+    doc = nlp(texto)
     
     encontrar_sustantivos(doc)
 
@@ -186,6 +185,7 @@ def procesar(usuario, texto):
         revision = Span(doc, min(indices), max(indices)+1, label="ORACION")
         oraciones_encontradas = revisar_oraciones(matcher, revision)
         oracion_busqueda = doc[min(indices):max(indices)+1]
+
         if len(oraciones_encontradas) > 1:
             for oracion in oraciones_encontradas:
                 acciones.append(oracion)
