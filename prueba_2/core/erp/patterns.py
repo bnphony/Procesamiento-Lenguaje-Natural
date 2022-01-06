@@ -575,6 +575,7 @@ pattern24 = [
     }
 ]
 
+
 # Reglas de Estructura
 verbo_sus_adp_verb_noun = [
     {"POS": "VERB"},
