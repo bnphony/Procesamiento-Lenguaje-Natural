@@ -19,8 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="version corregida">
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="12_01_2022_(1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/patterns.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,28 @@
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.pre_procesar">
+    <configuration name="pre_procesar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="prueba_2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core/erp" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/erp/pre_procesar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="prueba_2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.pre_procesar" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -160,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641441384414</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="12_01_2022_(1)">
+      <created>1642008896969</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1642008896969</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,7 +211,8 @@
     <MESSAGE value="actualizar el gitignore" />
     <MESSAGE value="primera version nuevos cambio" />
     <MESSAGE value="version corregida" />
-    <option name="LAST_COMMIT_MESSAGE" value="version corregida" />
+    <MESSAGE value="12_01_2022_(1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="12_01_2022_(1)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635186592894">
@@ -199,22 +231,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1641419602570" />
-    <state width="659" height="171" key="GridCell.Tab.0.bottom" timestamp="1641441913344">
+    <state width="659" height="167" key="GridCell.Tab.0.bottom" timestamp="1642027288676">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="171" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1641441913344" />
-    <state width="659" height="171" key="GridCell.Tab.0.center" timestamp="1641441913344">
+    <state width="659" height="167" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1642027288676" />
+    <state width="659" height="167" key="GridCell.Tab.0.center" timestamp="1642027288676">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="171" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1641441913344" />
-    <state width="659" height="171" key="GridCell.Tab.0.left" timestamp="1641441913343">
+    <state width="659" height="167" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1642027288676" />
+    <state width="659" height="167" key="GridCell.Tab.0.left" timestamp="1642027288676">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="171" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1641441913343" />
-    <state width="659" height="171" key="GridCell.Tab.0.right" timestamp="1641441913344">
+    <state width="659" height="167" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1642027288676" />
+    <state width="659" height="167" key="GridCell.Tab.0.right" timestamp="1642027288676">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="171" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1641441913344" />
+    <state width="659" height="167" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1642027288676" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1641419626005">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -227,13 +259,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1641441387783" />
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642008961139">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1642008961139" />
     <state x="667" y="0" width="585" height="728" key="find.popup" timestamp="1638829250643">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="667" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1638829250643" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1638935854296">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1642019962281">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1638935854296" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1642019962281" />
   </component>
 </project>
