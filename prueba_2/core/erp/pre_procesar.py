@@ -19,7 +19,7 @@ text = ""
 puntuacion = string.punctuation + '!¿'
 stopwords_spacy = list(STOP_WORDS)
 
-stop_words = ['cual', 'se', 'este', 'luego']  # Se borro la
+stop_words = ['cual', 'se', 'este', 'luego']
 
 
 
