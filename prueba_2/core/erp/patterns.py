@@ -727,6 +727,37 @@ pattern30 = [
         "RIGHT_ATTRS": {"DEP": "obj"},
     },
 ]
+# Pattern Creado para esta version de python
+pattern31 = [
+    {
+        "RIGHT_ID": "verbo_obj_nmod_acl_obj",
+        "RIGHT_ATTRS": {"POS": "VERB"}
+    },
+    {
+        "LEFT_ID": "verbo_obj_nmod_acl_obj",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_obj",
+        "RIGHT_ATTRS": {"DEP": "obj"},
+    },
+    {
+        "LEFT_ID": "objeto_obj",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nmod",
+        "RIGHT_ATTRS": {"DEP": "nmod"},
+    },
+    {
+        "LEFT_ID": "objeto_nmod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_acl",
+        "RIGHT_ATTRS": {"DEP": "acl"},
+    },
+    {
+        "LEFT_ID": "objeto_acl",
+        "REL_OP": ">",
+        "RIGHT_ID": "obj_obj",
+        "RIGHT_ATTRS": {"DEP": "obj"},
+    },
+]
 
 # Reglas de Estructura
 verbo_sus_adp_verb_noun = [

@@ -97,17 +97,11 @@ class Prueba(FormView):
 
                 usuario = request.POST['nombreUsuario']
                 texto = request.POST['relatoUsuario']
-                print("Aqui esta")
                 acciones = procesar(usuario, texto)
-
-                # form = self.get_form()
-                # data = form.save()
-                # GUARDAR EL REGISTRO
                 auxiliar = Auxiliar(relatoUsuario=texto)
                 auxiliar.save()
 
                 for index, frase in enumerate(acciones):
-                    # print(frase['usuario'], frase['que'], frase['para_que'])
                     nuevo = Accion(actor=frase['usuario'], que=frase['que'], para_que=frase['para_que'],
                                    posicion=index + 1, aux_id=auxiliar.id)
                     nuevo.save()

@@ -6,6 +6,9 @@ from core.erp.patterns import *
 from spacy.tokens import Doc, Span, Token
 import string
 
+from spacy import displacy
+from webbrowser import open_new_tab
+
 nlp = spacy.load("es_core_news_md")
 
 usuario = "usuario"
@@ -242,6 +245,8 @@ def revisar(usuario, oracion_que, oracion_para_que):
     encontrar_sustantivos(doc2)
     oraciones1 = revisar_oraciones(doc1)
     oraciones2 = revisar_oraciones(doc2)
+    print(oraciones1)
+    print(oraciones2)
 
     if (len(oraciones1) > 1):
         for index, i in enumerate(oraciones1):
@@ -306,10 +311,12 @@ def pre_procesar_oraciones(usuario, oracion):
                     # para_que.append("y")
                     break
 
+    print("QUE DEFINITIVO: ", que)
+    print("PARA QUE DEFINITIVO: ", para_que)
     oracion_que = " ".join(text_limpio(que))
     oracion_para_que = " ".join(text_limpio(para_que))
     oraciones = revisar(usuario, oracion_que, oracion_para_que)
-    con_el_objeto = ["con la finalidad", "para", "con el objeto", "con el objetivo", "con el fin"]
+
     if oraciones is None:
         oraciones = []
         partes = []
@@ -326,8 +333,16 @@ def pre_procesar_oraciones(usuario, oracion):
 def procesar(usuario, texto):
     doc = nlp(texto)
 
-
     encontrar_sustantivos(doc)
+
+    # documento = 'accion' + '.html'
+    # f = open(documento, 'w')
+
+    # hoja = displacy.render(doc, options={"compact": True})
+    # todo = hoja
+    # f.write(todo)
+    # f.close()
+    # open_new_tab(documento)
 
     tokens_ids = aplicar_dependencias(doc)
 
@@ -348,5 +363,13 @@ def procesar(usuario, texto):
     return oraciones
 
 
-text = "El sistema debe permitirme consultar los reportes de base de datos con el fin de ver la situacion de la empresa registrar las ventas para generar informes actualizar los nombres de usuario con el objetivo de mantener actualizado el sistema y eliminar los datos con el objeto de ahorrar dinero"
+# text = "El sistema debe permitirme consultar los reportes de base de datos con el fin de ver la situacion de la empresa registrar las ventas para generar informes actualizar los nombres de usuario con el objetivo de mantener actualizado el sistema y eliminar los datos con el objeto de ahorrar dinero"
+# text = "Una vez que el usuario se registro en el sistema puede consultar el menu principal donde puede seleccionar varias opciones"
+# text = """
+# inicia cuando el empleado Presenta una solicitud de vacaciones y luego estés revisado por el Departamento de recursos humanos para luego ser procesado para ser revisado y aprobado para ser libres para ser libres
+# """
+text = """
+    probando probando de armas que pueden reconocer acciones en este texto para lo cual vamos a escribir en el teclado para poder enviar un mensaje y poder mantener contra los pensamientos aunque no la recomendable mantener controlados pensamientos juzgado 34 cantado en este cementerio para poder enviar un mensaje ejecutar una acción para poder ejecutar un programa ingresar un texto en la caja de texto para luego procesarlo 
+"""
 procesar(usuario, text)
+
