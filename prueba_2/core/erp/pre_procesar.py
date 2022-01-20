@@ -6,9 +6,6 @@ from core.erp.patterns import *
 from spacy.tokens import Doc, Span, Token
 import string
 
-from spacy import displacy
-from webbrowser import open_new_tab
-
 import numpy as np
 
 nlp = spacy.load("es_core_news_md")
