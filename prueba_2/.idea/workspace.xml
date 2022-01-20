@@ -19,14 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="12_01_2022_(2)">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prueba_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prueba_2.iml" afterDir="false" />
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="20_01_2022_(1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/erp/patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/patterns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/erp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642043450961</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="20_01_2022_(1)">
+      <created>1642693241042</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1642693241042</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -266,7 +269,8 @@
     <MESSAGE value="version corregida" />
     <MESSAGE value="12_01_2022_(1)" />
     <MESSAGE value="12_01_2022_(2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="12_01_2022_(2)" />
+    <MESSAGE value="20_01_2022_(1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="20_01_2022_(1)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635186592894">
@@ -285,22 +289,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1642180800384" />
-    <state width="659" height="162" key="GridCell.Tab.0.bottom" timestamp="1642184203601">
+    <state width="1345" height="164" key="GridCell.Tab.0.bottom" timestamp="1642694392689">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="162" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1642184203601" />
-    <state width="659" height="162" key="GridCell.Tab.0.center" timestamp="1642184203601">
+    <state width="1345" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1642694392689" />
+    <state width="1345" height="164" key="GridCell.Tab.0.center" timestamp="1642694392689">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="162" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1642184203601" />
-    <state width="659" height="162" key="GridCell.Tab.0.left" timestamp="1642184203601">
+    <state width="1345" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1642694392689" />
+    <state width="1345" height="164" key="GridCell.Tab.0.left" timestamp="1642694392689">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="162" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1642184203601" />
-    <state width="659" height="162" key="GridCell.Tab.0.right" timestamp="1642184203601">
+    <state width="1345" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1642694392689" />
+    <state width="1345" height="164" key="GridCell.Tab.0.right" timestamp="1642694392689">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="162" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1642184203601" />
+    <state width="1345" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1642694392689" />
     <state x="327" y="66" key="RollbackChangesDialog" timestamp="1642090174061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -313,10 +317,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1637695963563" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1642043457537">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1642693243634">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1642043457537" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1642693243634" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642090177587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

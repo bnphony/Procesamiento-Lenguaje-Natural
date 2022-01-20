@@ -9,7 +9,7 @@ sustantivos_compuestos = [
         "LEFT_ID": "sustantivo",
         "REL_OP": ">",
         "RIGHT_ID": "nmod_sus",
-        "RIGHT_ATTRS": {"DEP": {"IN": ["nmod", "amod", "det"]}, "POS": {"IN": ["NOUN", "DET"]}, "LOWER": {"NOT_IN": con_el_objeto}}, # Se aumento amod y det y el POS NOUN
+        "RIGHT_ATTRS": {"DEP": {"IN": ["nmod", "amod", "det"]}, "POS": {"IN": ["NOUN", "DET", "ADJ", "PROPN"]}, "LOWER": {"NOT_IN": con_el_objeto}}, # Se aumento amod y det y el POS NOUN
     }
 ]
 
@@ -30,6 +30,38 @@ sustantivos_compuestos_2 = [
         "RIGHT_ID": "adjectivo_tres",
         "RIGHT_ATTRS": {"DEP": "amod", "POS": {"IN": ["NOUN", "DET"]}},
     }
+]
+
+sustantivos_compuestos_3 = [
+    {
+        "RIGHT_ID": "noun_adjappos",
+        "RIGHT_ATTRS": {"POS": "NOUN"}
+    },
+    {
+        "LEFT_ID": "noun_adjappos",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_adj",
+        "RIGHT_ATTRS": {"DEP": "amod"},
+    },
+    {
+        "LEFT_ID": "noun_adjappos",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_appos",
+        "RIGHT_ATTRS": {"DEP": "appos"},
+    },
+]
+
+propn_nummod = [
+    {
+        "RIGHT_ID": "propn_nummod",
+        "RIGHT_ATTRS": {"POS": "PROPN"}
+    },
+    {
+        "LEFT_ID": "propn_nummod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nummod",
+        "RIGHT_ATTRS": {"DEP": "nummod"},
+    },
 ]
 
 con_la_finalidad_de = [
@@ -419,7 +451,7 @@ pattern18 = [
         "LEFT_ID": "verbo_obl_acl",
         "REL_OP": ">",
         "RIGHT_ID": "objeto_obl",
-        "RIGHT_ATTRS": {"DEP": "obl"},
+        "RIGHT_ATTRS": {"DEP": {"IN": ["obl", "obj"]}},
     },
     {
         "LEFT_ID": "objeto_obl",
@@ -705,7 +737,7 @@ pattern29 = [
         "LEFT_ID": "objeto_ccomp",
         "REL_OP": ">",
         "RIGHT_ID": "objeto_conj",
-        "RIGHT_ATTRS": {"DEP": "conj"},
+        "RIGHT_ATTRS": {"DEP": {"IN": ["conj", "acl"]}},
     },
 ]
 
@@ -727,14 +759,281 @@ pattern30 = [
         "RIGHT_ATTRS": {"DEP": "obj"},
     },
 ]
-# Pattern Creado para esta version de python
 pattern31 = [
     {
-        "RIGHT_ID": "verbo_obj_nmod_acl_obj",
+        "RIGHT_ID": "verbo_sconj_verbo_obj",
         "RIGHT_ATTRS": {"POS": "VERB"}
     },
     {
-        "LEFT_ID": "verbo_obj_nmod_acl_obj",
+        "LEFT_ID": "verbo_sconj_verbo_obj",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_verbo",
+        "RIGHT_ATTRS": {"DEP": "conj"}
+    },
+    {
+        "LEFT_ID": "objeto_verbo",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_obj",
+        "RIGHT_ATTRS": {"DEP": "obj"},
+    },
+]
+
+# Cuando hay varias opciones de sujetos
+pattern32 = [
+    {
+        "RIGHT_ID": "noun_cconj_noun",
+        "RIGHT_ATTRS": {"POS": {"IN": ["NOUN", "VERB"]}}
+    },
+    {
+        "LEFT_ID": "noun_cconj_noun",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_noun",
+        "RIGHT_ATTRS": {"DEP": "conj"},
+    },
+]
+
+# Cuando se refiere a un sujeto
+pattern33 = [
+    {
+        "RIGHT_ID": "noun_adj_acl",
+        "RIGHT_ATTRS": {"POS": "NOUN"}
+    },
+    {
+        "LEFT_ID": "noun_adj_acl",
+        "REL_OP": ">",
+        "RIGHT_ID": "obj_adj",
+        "RIGHT_ATTRS": {"DEP": "amod"}
+    },
+    {
+        "LEFT_ID": "obj_adj",
+        "REL_OP": ".",
+        "RIGHT_ID": "objeto_adp",
+        "RIGHT_ATTRS": {"POS": "ADP", "LOWER": "para"},
+    },
+    {
+        "LEFT_ID": "objeto_adp",
+        "REL_OP": "<",
+        "RIGHT_ID": "objeto_mark",
+        "RIGHT_ATTRS": {}
+    }
+]
+
+pattern34 = [
+    {
+        "RIGHT_ID": "noun_nmod_acl",
+        "RIGHT_ATTRS": {"POS": "NOUN"}
+    },
+    {
+        "LEFT_ID": "noun_nmod_acl",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nmod",
+        "RIGHT_ATTRS": {"DEP": "nmod"},
+    },
+    {
+        "LEFT_ID": "objeto_nmod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_acl",
+        "RIGHT_ATTRS": {"DEP": "acl", "POS": {"NOT_IN": ["VERB"]}},
+    },
+]
+# Similar al pattern 34 la diferencia es el amod
+pattern35 = [
+    {
+        "RIGHT_ID": "noun_amod_nmod_acl",
+        "RIGHT_ATTRS": {"POS": "NOUN"}
+    },
+    {
+        "LEFT_ID": "noun_amod_nmod_acl",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_amod",
+        "RIGHT_ATTRS": {"DEP": "amod"},
+    },
+    {
+        "LEFT_ID": "objeto_amod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nmod",
+        "RIGHT_ATTRS": {"DEP": "nmod"},
+    },
+    {
+        "LEFT_ID": "objeto_nmod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_acl",
+        "RIGHT_ATTRS": {"DEP": "acl"},
+    },
+]
+
+pattern36 = [
+    {
+        "RIGHT_ID": "noun_nmod_nummod",
+        "RIGHT_ATTRS": {"POS": "NOUN"}
+    },
+    {
+        "LEFT_ID": "noun_nmod_nummod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nmod",
+        "RIGHT_ATTRS": {"DEP": "nmod"},
+    },
+    {
+        "LEFT_ID": "objeto_nmod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nummod",
+        "RIGHT_ATTRS": {"DEP": "nummod"},
+    },
+]
+
+# Similar al pattern 36
+pattern37 = [
+    {
+        "RIGHT_ID": "noun_nummod",
+        "RIGHT_ATTRS": {"POS": "NOUN"}
+    },
+    {
+        "LEFT_ID": "noun_nummod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nummod",
+        "RIGHT_ATTRS": {"DEP": {"IN": ["nummod", "compound"]}},
+    },
+]
+
+
+pattern38 = [
+    {
+        "RIGHT_ID": "noun_conj",
+        "RIGHT_ATTRS": {"POS": "NOUN"}
+    },
+    {
+        "LEFT_ID": "noun_conj",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_conj",
+        "RIGHT_ATTRS": {"DEP": "conj"}
+    }
+]
+
+
+# Cuando hay advervios modificadores al final
+pattern39 = [
+    {
+        "RIGHT_ID": "verbo_obj_obl_advmod",
+        "RIGHT_ATTRS": {"POS": "VERB"}
+    },
+    {
+        "LEFT_ID": "verbo_obj_obl_advmod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_obj",
+        "RIGHT_ATTRS": {"DEP": "obj"},
+    },
+    {
+        "LEFT_ID": "verbo_obj_obl_advmod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_obl",
+        "RIGHT_ATTRS": {"DEP": "obl"},
+    },
+    {
+        "LEFT_ID": "verbo_obj_obl_advmod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_advmod",
+        "RIGHT_ATTRS": {"DEP": "advmod"},
+    },
+]
+
+# Similar al pattern 29
+pattern40 = [
+    {
+        "RIGHT_ID": "verbo_ccomp_nsubj_acl",
+        "RIGHT_ATTRS": {"POS": "VERB"}
+    },
+    {
+        "LEFT_ID": "verbo_ccomp_nsubj_acl",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_ccomp",
+        "RIGHT_ATTRS": {"DEP": "ccomp"},
+    },
+    {
+        "LEFT_ID": "objeto_ccomp",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nsubj",
+        "RIGHT_ATTRS": {"DEP": "nsubj"},
+    },
+    {
+        "LEFT_ID": "objeto_nsubj",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_acl",
+        "RIGHT_ATTRS": {"DEP": "acl"},
+    },
+]
+
+pattern41 = [
+    {
+        "RIGHT_ID": "verbo_ccomp",
+        "RIGHT_ATTRS": {"POS": "VERB"}
+    },
+    {
+        "LEFT_ID": "verbo_ccomp",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_ccomp",
+        "RIGHT_ATTRS": {"DEP": "ccomp"}
+    }
+]
+
+# descubrir material luego del para que
+pattern42 = [
+    {
+        "RIGHT_ID": "noun_appos_conj_obj",
+        "RIGHT_ATTRS": {"POS": "NOUN", "LOWER": {"IN": con_el_objeto}}
+    },
+    {
+        "LEFT_ID": "noun_appos_conj_obj",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_appos",
+        "RIGHT_ATTRS": {"DEP": "appos"},
+    },
+    {
+        "LEFT_ID": "objeto_appos",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_conj",
+        "RIGHT_ATTRS": {"DEP": "conj"},
+    },
+    {
+        "LEFT_ID": "objeto_conj",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_obj",
+        "RIGHT_ATTRS": {"DEP": "obj"},
+    },
+]
+
+# NO FUNCIONALES
+pattern43 = [
+    {
+        "RIGHT_ID": "adj_nsubj_nmod_acl",
+        "RIGHT_ATTRS": {"POS": "ADJ"}
+    },
+    {
+        "LEFT_ID": "adj_nsubj_nmod_acl",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nsubj",
+        "RIGHT_ATTRS": {"DEP": "nsubj"},
+    },
+    {
+        "LEFT_ID": "objeto_nsubj",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_nmod",
+        "RIGHT_ATTRS": {"DEP": "nmod"},
+    },
+    {
+        "LEFT_ID": "objeto_nmod",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_acl",
+        "RIGHT_ATTRS": {"DEP": "acl"},
+    },
+]
+
+pattern44 = [
+    {
+        "RIGHT_ID": "verbo_obj_nmod_acl",
+        "RIGHT_ATTRS": {"POS": "VERB"}
+    },
+    {
+        "LEFT_ID": "verbo_obj_nmod_acl",
         "REL_OP": ">",
         "RIGHT_ID": "objeto_obj",
         "RIGHT_ATTRS": {"DEP": "obj"},
@@ -751,11 +1050,30 @@ pattern31 = [
         "RIGHT_ID": "objeto_acl",
         "RIGHT_ATTRS": {"DEP": "acl"},
     },
+]
+
+pattern45 = [
     {
-        "LEFT_ID": "objeto_acl",
+        "RIGHT_ID": "verbo_nsubj_appos_compound",
+        "RIGHT_ATTRS": {"POS": "VERB"}
+    },
+    {
+        "LEFT_ID": "verbo_nsubj_appos_compound",
         "REL_OP": ">",
-        "RIGHT_ID": "obj_obj",
-        "RIGHT_ATTRS": {"DEP": "obj"},
+        "RIGHT_ID": "objeto_nsubj",
+        "RIGHT_ATTRS": {"DEP": "nsubj"},
+    },
+    {
+        "LEFT_ID": "objeto_nsubj",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_appos",
+        "RIGHT_ATTRS": {"DEP": "appos"},
+    },
+    {
+        "LEFT_ID": "objeto_appos",
+        "REL_OP": ">",
+        "RIGHT_ID": "objeto_compound",
+        "RIGHT_ATTRS": {"DEP": "compound"},
     },
 ]
 
@@ -778,15 +1096,57 @@ verbo_sus_adp_verb_noun = [
     {"POS": {"IN": ["NOUN"]}, "OP": "?"}, # Opcional
     {"POS": {"NOT_IN": ["CCONJ", "VERB"]}}
 ]
+verbo_para_que = [
+    {"POS": "VERB"},
+    {"POS": {"NOT_IN": ["VERB"]}, "LOWER": {"NOT_IN": ["para", "de"]}, "OP": "*"},
+    {"LOWER": {"IN": con_el_objeto}},
+    {"POS": {"IN": ["ADP"]}, "LOWER": {"IN": ["para", "de"]}},
+    {"POS": {"IN": ["NOUN", "VERB"]}}
+]
 
 verbo_obj = [
     {"POS": "VERB"},
-    {"POS": {"IN": ["ADP", "DET", "SCONJ"]}, "OP": "*"},
+    {"POS": {"IN": ["ADP", "DET", "SCONJ", "PROPN"]}, "OP": "*"},
     {"POS": "ADJ", "OP": "?"} ,
     {"POS": {"IN": ["NOUN", "ADJ"]}}, # Se agrego el ADJ y el VERB
     {"POS": "ADJ", "OP": "?"},
     {"POS": "NOUN", "OP": "?"},
-    {"LOWER": {"NOT_IN": ["para", "de"]}, "POS": {"NOT_IN": ["VERB", "PROPN", "ADV", "CCONJ"]}, "OP": "*"} # Este se agrego ultimo, puede generar problemas OJO
+    {"LOWER": {"NOT_IN": ["para", "de"]}, "POS": {"NOT_IN": ["VERB", "PROPN", "ADV", "CCONJ", "SCONJ"]}, "OP": "*"}, # Este se agrego ultimo, puede generar problemas OJO
+    {"POS": {"IN": ["PROPN", "ADJ", "CCONJ", "ADP", "NOUN"]}, "OP": "*"}, # Este se agrego
+    {"POS": "AUX", "OP": "?"},
+    {"POS": {"IN": ["PROPN", "ADJ", "NOUN", "ADP"]},  "OP": "*"} # Este se agrego al ultimo
+]
+
+verbo_n = [
+    {"POS": "VERB"},
+    {"POS": {"IN": ["PRON", "AUX"]}, "OP": "*"},
+    {"POS": "NOUN"}
+]
+
+adp_adv_noun = [
+    {"POS": "ADP"},
+    {"POS": {"IN": ["ADV", "ADP"]}, "OP": "*"},
+    {"POS": "NOUN"}
+]
+
+adj_det_noun_verbo = [
+    {"POS": "ADJ"},
+    {"POS": {"IN": ["DET", "SYM", "ADP"]}, "OP": "+"},
+    {"POS": {"IN": ["NOUN", "PRON"]}, "OP": "+"},
+    {"POS": "VERB"}
+]
+
+verbo_obj_causa = [
+    {"POS": "VERB"},
+    {"POS": {"IN": ["ADP", "DET", "SCONJ", "PROPN"]}, "OP": "*"},
+    {"POS": "ADJ", "OP": "?"},
+    {"POS": {"IN": ["NOUN", "ADJ"]}},
+    {"POS": "ADJ", "OP": "?"},
+    {"POS": {"IN": ["ADP", "DET"]}, "OP": "*"},
+    {"POS": {"IN": ["NOUN", "ADJ"]}},
+    {"POS": {"IN": ["SCONJ"]}, "LOWER": "cuando"},
+    {"POS": {"IN": ["AUX", "DET"]}, "OP": "*"},
+    {"POS": "VERB"},
 ]
 
 oracion_simple_2 = [
@@ -799,19 +1159,19 @@ oracion_simple_2 = [
     {"LOWER": {"NOT_IN": ["para", "de", "que"]}, "POS": {"NOT_IN": ["VERB", "PROPN", "ADV"]}, "OP": "*"},
     {"POS": {"IN": ["PRON", "SCONJ"]}, "LOWER": "que"},
     {"POS": {"NOT_IN": ["VERB"]}, "OP": "*"},
-    {"POS": {"IN": ["NOUN", "VERB"]}, "OP": "?"},
+    {"POS": {"IN": ["NOUN", "VERB"]}, "DEP": {"NOT_IN": ["flat"]}, "OP": "?"},
     {"POS": {"NOT_IN": ["CCONJ"]}, "OP": "*"}
 ]
 
 verbo_a_verbo = [
     {"POS": "VERB"},
-    {"POS": {"IN": ["ADP", "SCONJ"]}},
+    {"POS": {"IN": ["ADP", "SCONJ"]}, "OP": "?"},
     {"POS": "VERB", "DEP": "xcomp"},
 ]
 
 verbo_adp_verbo = [
     {"POS": "VERB"},
-    {"POS": {"IN": ["NOUN", "ADJ"]}, "OP": "?"},
+    {"POS": {"IN": ["NOUN", "ADJ", "PROPN"]}, "OP": "?"},
     {"POS": {"IN": ["ADP", "NOUN"]}, "LOWER": {"IN": con_el_objeto}},
     {"POS": {"IN": ["DET", "ADP"]}, "LOWER": "de", "OP": "?"},
     {"POS": {"IN": ["NOUN", "VERB", "AUX"]}},
@@ -820,7 +1180,7 @@ verbo_adp_verbo = [
 
 aux_adj = [
     {"POS": "AUX"},
-    {"POS": "ADJ"},
+    {"POS": {"IN": ["ADJ", "VERB", "NOUN"]}},
     {"POS": "PRON", "OP": "?"},
     {"POS": "DET", "OP": "?"},
 ]
