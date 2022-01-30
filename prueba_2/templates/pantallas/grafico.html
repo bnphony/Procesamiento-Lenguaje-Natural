@@ -1,0 +1,47 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/grafico.css' %}">
+     <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
+
+
+{% endblock %}
+
+{% block content %}
+<div>
+    <a href="{{ acciones_url }}" class="btn btn-primary">Regresar</a>
+</div>
+<h2>{{ sub_title }}</h2>
+<div class="contenedor">
+    <svg width="900" height="900"></svg>
+</div>
+<div class="descripcion">
+    <div>
+        <p># Historia de Usuario</p>
+        <p>Depedencias: </p>
+        <u>
+            <li>Sin dependencias</li>
+        </u>
+        <p>Solo es un pesnamiento</p>
+        <p>Solo es un pensamiento</p>
+        <p>solo es un pensamiento</p>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="{% static 'js/grafico.js' %}"></script>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+

@@ -429,15 +429,15 @@ def procesar(usuario, texto):
         # print("SENTENCE: ", oracion_busqueda)
 
     oraciones = []
-    acciones = oraciones_sin_limpiar
-    for index, i in enumerate(acciones):
-        if index > 0:
-            if acciones[index][0].head.text == acciones[index - 1][-1].text or acciones[index][0].head.text == \
-                    acciones[index - 1][0].text:
-                acciones[index - 1] = doc[acciones[index - 1][0].i:acciones[index][-1].i + 1]
-                acciones.remove(i)
+    # acciones = oraciones_sin_limpiar
+    # for index, i in enumerate(acciones):
+    #     if index > 0:
+    #         if acciones[index][0].head.text == acciones[index - 1][-1].text or acciones[index][0].head.text == \
+    #                 acciones[index - 1][0].text:
+    #             acciones[index - 1] = doc[acciones[index - 1][0].i:acciones[index][-1].i + 1]
+    #             acciones.remove(i)
 
-    for oracion in acciones:
+    for oracion in oraciones_sin_limpiar:
         oraciones1 = pre_procesar_oraciones(usuario, oracion)
         for i in oraciones1:
             oraciones.append(i)

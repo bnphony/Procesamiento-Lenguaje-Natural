@@ -19,8 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="20_01_2022_(4)">
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="20_01_2022_(5)">
+      <change afterPath="$PROJECT_DIR$/static/css/grafico.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/grafico.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pantallas/grafico.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -53,16 +59,17 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\templates\pantallas" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\lib" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\img" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\core" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pre_procesar">
@@ -253,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642694926871</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="20_01_2022_(5)">
+      <created>1642695489997</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1642695489997</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -292,7 +306,8 @@
     <MESSAGE value="20_01_2022_(2)" />
     <MESSAGE value="20_01_2022_(3)" />
     <MESSAGE value="20_01_2022_(4)" />
-    <option name="LAST_COMMIT_MESSAGE" value="20_01_2022_(4)" />
+    <MESSAGE value="20_01_2022_(5)" />
+    <option name="LAST_COMMIT_MESSAGE" value="20_01_2022_(5)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635186592894">
@@ -311,22 +326,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1642180800384" />
-    <state width="1345" height="164" key="GridCell.Tab.0.bottom" timestamp="1642695313937">
+    <state width="1345" height="164" key="GridCell.Tab.0.bottom" timestamp="1643581782004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1642695313937" />
-    <state width="1345" height="164" key="GridCell.Tab.0.center" timestamp="1642695313935">
+    <state width="1345" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1643581782004" />
+    <state width="1345" height="164" key="GridCell.Tab.0.center" timestamp="1643581782004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1642695313935" />
-    <state width="1345" height="164" key="GridCell.Tab.0.left" timestamp="1642695313934">
+    <state width="1345" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1643581782004" />
+    <state width="1345" height="164" key="GridCell.Tab.0.left" timestamp="1643581782003">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1642695313934" />
-    <state width="1345" height="164" key="GridCell.Tab.0.right" timestamp="1642695313936">
+    <state width="1345" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1643581782003" />
+    <state width="1345" height="164" key="GridCell.Tab.0.right" timestamp="1643581782004">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1642695313936" />
+    <state width="1345" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1643581782004" />
     <state x="327" y="66" key="RollbackChangesDialog" timestamp="1642090174061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -339,10 +354,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1637695963563" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1642694928611">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1642695492361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1642694928611" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1642695492361" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642090177587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -351,9 +366,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="667" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1638829250643" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1642019962281">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1643581619939">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1642019962281" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1643581619939" />
   </component>
 </project>

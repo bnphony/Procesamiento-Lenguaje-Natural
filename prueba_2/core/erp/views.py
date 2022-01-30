@@ -216,6 +216,54 @@ class Backlog(ListView):
         context['mensaje'] = 'Historias de Usuario'
         return context
 
+class Grafico(ListView):
+    template_name = 'pantallas/grafico.html'
+    model = Auxiliar
+    success_url = reverse_lazy('prueba')
+
+    @method_decorator(csrf_exempt)
+    def dispath(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        data = {}
+        try:
+            action = request.POST['action']
+            if action == 'searchdata':
+                print('Entro aqui sfdsfd dfd')
+                variable = Auxiliar.objects.all().last()
+
+                acciones = Accion.objects.filter(aux_id=variable.id)
+
+                data = []
+                for frase in acciones:
+                    item = {}
+                    item['id'] = frase.id
+                    item['usuario'] = frase.actor
+                    item['que'] = frase.que
+                    item['para_que'] = frase.para_que
+                    item['posicion'] = frase.posicion
+                    data.append(item)
+
+            else:
+                data['error'] = 'Ha ocurrido un error'
+        except Exception as e:
+            data['error'] = str(e)
+
+        return JsonResponse(data, safe=False)
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Microservicios'
+        context['sub_title'] = 'Grafico de los Microservicios'
+        context['ingreso_url'] = reverse_lazy('prueba')
+        context['entity'] = 'Microservicios'
+        return context
+
+
+
+
 
 class Acciones(ListView):
     template_name = 'pantallas/Acciones.html'
@@ -247,3 +295,5 @@ class Acciones(ListView):
         context['ingreso_url'] = reverse_lazy('prueba')
         context['entity'] = 'Categorias'
         return context
+
+

@@ -25,4 +25,5 @@ urlpatterns = [
     path('accion/', Acciones.as_view(), name='acciones'),
     path('accion_1/', Accion_1.as_view(), name='accion'),
     path('backlog/', Backlog.as_view(), name='backlog'),
+    path('microservicios/', Grafico.as_view(), name='microservicios'),
 ]
