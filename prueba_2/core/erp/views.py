@@ -111,6 +111,7 @@ class Prueba(FormView):
             else:
                 data['error'] = "No ha ingresado a ninguna opcion"
         except Exception as e:
+            print('Ingreso a la excepcion')
             data['error'] = str(e)
         return JsonResponse(data, safe=False)
 
