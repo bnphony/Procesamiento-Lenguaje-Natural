@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="30_01_2022_(1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pantallas/grafico.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/grafico.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Practica Python/algoritmos de python/Procesamiento del Lenguaje/Accion/Practicas/practicas/practica_siete.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -345,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643597019561</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="30_01_2022_(1)">
+      <created>1643597850197</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1643597850197</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -405,10 +413,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1635369899633" />
-    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1642180800384">
+    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1643598019487">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1642180800384" />
+    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1643598019487" />
     <state width="1345" height="164" key="GridCell.Tab.0.bottom" timestamp="1643582666971">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -437,10 +445,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1637695963563" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1643597020960">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1643597851082">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1643597020960" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1643597851082" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642090177587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
