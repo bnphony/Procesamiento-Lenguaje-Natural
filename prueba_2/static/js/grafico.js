@@ -9,12 +9,8 @@ datos = {
         { name: "h7", value: 12 },
         { name: "h8", value: 12 },
         { name: "h9", value: 12 },
-        { name: "h10", value: 12 },
-        { name: "h11", value: 12 },
-        { name: "h12", value: 12 },
-        { name: "h13", value: 12 },
-        { name: "h14", value: 12 },
-        { name: "h15", value: 12 }
+        { name: "h10", value: 12 }
+
 
 
     ],
@@ -216,10 +212,55 @@ var contenedores = svg
     .data(datos.nodes)
     .enter()
     .append('g')
+    .call(drag)
+    .on("click", function(d) {
+        mostrarInformacion(d);
+    });
 
-    .call(drag);
+
+let nombre = document.getElementById('name');
+
+const aux = d3.select('#dependencias');
 
 
+
+
+
+
+
+function mostrarInformacion(a) {
+//    console.log('hola', d);
+    source = a;
+    console.log(a);
+
+    const dependencias = aux.selectAll('li')
+        .data(datos.links, function(d) {
+            console.log(d);
+            return d;
+        });
+    dependencias
+        .enter()
+            .filter(function(d, i) {
+//                console.log(d, i);
+                return d.source == source || d.target == source;
+            })
+            .append('li')
+            .style('color', 'purple')
+
+        .merge(aux)
+            .transition().duration(1000)
+            .text(function(d, i) {
+                console.log(d, i);
+                return d.source.name + ' > ' + d.target.name;
+            })
+            .style('color', 'green')
+
+            dependencias.exit().remove();
+
+//    console.log(datos.links);
+//    console.log(typeof(d.name));
+    nombre.innerHTML = 'ID historia de usuario: ' + a.name;
+}
 
 var circulos = contenedores
     .append('circle')
