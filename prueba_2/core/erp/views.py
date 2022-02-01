@@ -9,7 +9,7 @@ from core.erp.models import Auxiliar, Accion
 
 from django.http import JsonResponse
 
-from core.erp.forms import IngresoRelatoUsuarioForm
+from core.erp.forms import IngresoRelatoUsuarioForm, AccionForm
 
 import speech_recognition as sr
 
@@ -218,6 +218,8 @@ class Backlog(ListView):
         return context
 
 class Grafico(ListView):
+    model = Accion
+    form_class = AccionForm
     template_name = 'pantallas/grafico.html'
     model = Auxiliar
     success_url = reverse_lazy('prueba')
@@ -260,6 +262,7 @@ class Grafico(ListView):
         context['sub_title'] = 'Grafico de los Microservicios'
         context['ingreso_url'] = reverse_lazy('prueba')
         context['entity'] = 'Microservicios'
+        context['formAccion'] = AccionForm()
         return context
 
 

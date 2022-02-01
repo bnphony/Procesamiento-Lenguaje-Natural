@@ -229,37 +229,44 @@ const aux = d3.select('#dependencias');
 
 
 function mostrarInformacion(a) {
-//    console.log('hola', d);
+    $('#myModalClient').modal('show');
     source = a;
-    console.log(a);
-
+    var cont = 0;
     const dependencias = aux.selectAll('li')
-        .data(datos.links, function(d) {
-            console.log(d);
-            return d;
-        });
-    dependencias
-        .enter()
-            .filter(function(d, i) {
-//                console.log(d, i);
+        .data(datos.links.filter(function(d) {
                 return d.source == source || d.target == source;
-            })
+            }));
+        dependencias
+        .enter()
             .append('li')
             .style('color', 'purple')
 
-        .merge(aux)
+        .merge(dependencias)
             .transition().duration(1000)
             .text(function(d, i) {
                 console.log(d, i);
+                cont += 1;
                 return d.source.name + ' > ' + d.target.name;
             })
-            .style('color', 'green')
+            .style('color', 'green');
 
-            dependencias.exit().remove();
+        d3.select('#dependencias').selectAll('li')
+            .data(datos.links.filter(function(d) {
+                return d.source == source || d.target == source;
+            }))
+            .exit()
+            .remove();
 
-//    console.log(datos.links);
-//    console.log(typeof(d.name));
     nombre.innerHTML = 'ID historia de usuario: ' + a.name;
+    if (cont == 0) {
+        d3.select('#descripcion')
+            .select('span')
+            .style('display', 'block');
+    } else {
+        d3.select('#descripcion')
+            .select('span')
+            .style('display', 'none');
+    }
 }
 
 var circulos = contenedores
@@ -267,14 +274,15 @@ var circulos = contenedores
     .attr('r', d => d.value)
     .attr('fill', function(d,  i) {
         return color(i);
-    });
+    }).style('cursor', 'hand');
 
 
 var texts = contenedores
 
     .append('text')
     .text((d) => d.name)
-    .attr('text-anchor', 'middle');
+    .attr('text-anchor', 'middle')
+    .style('cursor', 'hand');
 
 function ticked() {
 
@@ -319,6 +327,18 @@ function dragended(d) {
     d.fx = null;
     d.fy = null;
 }
+
+$(function() {
+
+    $('#myModalClient').on('hidden.bs.modal', function(e) {
+        $('#frmAccion').trigger('reset');
+    });
+
+    $('#frmAccion').on('submit', function(e) {
+        e.preventDefault();
+        $('#myModalClient').modal('hide');
+    });
+})
 
 
 

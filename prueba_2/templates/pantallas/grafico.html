@@ -1,5 +1,7 @@
 {% extends 'dashboard.html' %}
 {% load static %}
+{% load widget_tweaks %}
+
 
 {% block head %}
     <link rel="stylesheet" href="{% static 'css/grafico.css' %}">
@@ -16,16 +18,40 @@
 <div class="contenedor">
     <svg width="900" height="600"></svg>
 </div>
-<div class="descripcion">
-    <div>
-        <p id="name"># Historia de Usuario</p>
-        <p>Depedencias: </p>
-        <ul id="dependencias">
 
-        </ul>
+<div class="modal fade" id="myModalClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <form id="frmAccion" enctype="multipart/form-data" method="post">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <b><i class="fas fa-list"></i> Información de la Historia de Usuario </b>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                         <div id="descripcion">
+                            <p id="name"># Historia de Usuario</p>
+                            <p>Depedencias: </p>
+                            <ul id="dependencias">
+                            </ul>
+                             <span>No se encontraron dependencias</span>
+                         </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">
+                            <i class="fas fa-check"></i> Aceptar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
 
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
