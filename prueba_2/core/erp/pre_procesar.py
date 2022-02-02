@@ -267,6 +267,7 @@ def revisar_oraciones(doc):
     matcher_reglas.add("VERBO_CON_QUE", [verbo_con_que], greedy='LONGEST')
     matcher_reglas.add("VERBO_OBJ_CAUSA", [verbo_obj_causa], greedy='LONGEST')
     matcher_reglas.add("VERBO_N", [verbo_n], greedy='LONGEST')
+    matcher_reglas.add("VERBO_O_VERBO", [verbo_o_verbo], greedy='LONGEST')
 
     matches = matcher_reglas(doc)
 
@@ -428,6 +429,33 @@ def procesar(usuario, texto):
 
         # print("SENTENCE: ", oracion_busqueda)
 
+
+    # Encontrar los grupos de los sustantivos relacionados
+    resultado = 0
+    contador = 0
+    grupos = []
+    sustantivos = [token for token in doc if token.pos_ == "NOUN"]
+    for index, token in enumerate(sustantivos):
+        if token.pos_ == "NOUN":
+            for i in sustantivos[index + 1:]:
+                resultado = token.similarity(i)
+                if (resultado > 0.85):
+                    grupos.append([token, i])
+                    contador += 1
+
+    preview = []
+    for index, grupo in enumerate(grupos):
+        preview = grupo
+        for sus in (grupos[:grupos.index(preview)] + grupos[grupos.index(preview) + 1:]):
+            if not set(sus).isdisjoint(preview):
+                valor = list(set(preview + sus))
+                if sus in grupos:
+                    grupos.remove(sus)
+                grupos[grupos.index(preview)] = valor
+                preview = valor
+
+
+
     oraciones = []
     # acciones = oraciones_sin_limpiar
     # for index, i in enumerate(acciones):
@@ -443,5 +471,19 @@ def procesar(usuario, texto):
             oraciones.append(i)
             # print(i)
 
+    for index, oracion in enumerate(oraciones):
+        oracion['grupo'] = 0
+
+    resultado = 0
+    for index, oracion in enumerate(oraciones):
+        sustantivo = [token for token in oracion['que'] if token.pos_ == "NOUN"][0]
+        for n, i in enumerate(grupos):
+            for palabra in i:
+                resultado = sustantivo.similarity(palabra)
+                if (resultado > 0.85):
+                    oracion['grupo'] = n + 1
+                    break
+
     print("oraciones encontradas: ", len(oraciones))
+
     return oraciones

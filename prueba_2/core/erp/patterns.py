@@ -64,6 +64,7 @@ propn_nummod = [
     },
 ]
 
+
 con_la_finalidad_de = [
     {
         "RIGHT_ID": "fin",
@@ -1167,6 +1168,13 @@ verbo_a_verbo = [
     {"POS": "VERB"},
     {"POS": {"IN": ["ADP", "SCONJ"]}, "OP": "?"},
     {"POS": "VERB", "DEP": "xcomp"},
+]
+
+
+verbo_o_verbo = [
+    {"POS": "VERB"},
+    {"POS": "CCONJ", "LOWER": "o"},
+    {"POS": "VERB"},
 ]
 
 verbo_adp_verbo = [

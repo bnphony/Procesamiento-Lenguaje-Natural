@@ -329,6 +329,22 @@ function dragended(d) {
 }
 
 $(function() {
+    $.ajax({
+        url: window.location.pathname,
+        type: 'POST',
+        data: {
+            'action': 'searchdata'
+        },
+        dataType: 'json',
+    }).done(function(data) {
+//        imprimir(data);
+        console.log(data);
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+        alert(textStatus + ': ' + errorThrown);
+    }).always(function(data) {
+
+    });
+
 
     $('#myModalClient').on('hidden.bs.modal', function(e) {
         $('#frmAccion').trigger('reset');

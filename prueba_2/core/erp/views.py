@@ -14,6 +14,7 @@ from core.erp.forms import IngresoRelatoUsuarioForm, AccionForm
 import speech_recognition as sr
 
 from core.erp.pre_procesar import procesar
+from core.erp.conexiones import crearDependencia
 
 
 class PantallaHola(FormView):
@@ -103,7 +104,7 @@ class Prueba(FormView):
 
                 for index, frase in enumerate(acciones):
                     nuevo = Accion(actor=frase['usuario'], que=frase['que'], para_que=frase['para_que'],
-                                   posicion=index + 1, aux_id=auxiliar.id)
+                                   posicion=index + 1, grupo=frase['grupo'] ,aux_id=auxiliar.id)
                     nuevo.save()
 
                 data['url'] = reverse_lazy('accion')
@@ -237,16 +238,10 @@ class Grafico(ListView):
                 variable = Auxiliar.objects.all().last()
 
                 acciones = Accion.objects.filter(aux_id=variable.id)
-
+                datos = crearDependencia(acciones)
                 data = []
-                for frase in acciones:
-                    item = {}
-                    item['id'] = frase.id
-                    item['usuario'] = frase.actor
-                    item['que'] = frase.que
-                    item['para_que'] = frase.para_que
-                    item['posicion'] = frase.posicion
-                    data.append(item)
+
+                data = datos
 
             else:
                 data['error'] = 'Ha ocurrido un error'
