@@ -23,17 +23,19 @@ $(function () {
 
       });
 
+
 });
 
 function imprimir(data){
 //    $.each(this.data, console.log(data.relatoUsuario));
     for (i = 0; i < data.length; i++){
-        var nuevo = '<div class="accion" id="'+data[i].posicion+'" data-id="'+data[i].posicion+'"> ' +
+        var nuevo = '<div class="accion" id="'+data[i].posicion+'" data-id="'+(i + 1)+'"> ' +
         '<div class="div_numero"><p class="numero">'+(i+1)+'</p></div>' +
         '<div><p class="relato"><em class="relato1"> COMO: </em>'+data[i].usuario+'</p>' +
         '<p class="que"><em class="q"> NECESITO QUE EL SISTEMA ME PERMITA: </em>'+data[i].que+'</p>' +
         '<p class="para_que"><em class="para_que1"> CON LA FINALIDAD DE: </em>'+data[i].para_que+'</p>' +
         '</div>' +
+        '<div class="div_numero eliminar">X</div>'
         '</div>';
         $("#lista-acciones").append(nuevo);
     }
@@ -42,15 +44,26 @@ function imprimir(data){
 function ordenar(){
     const lista = document.getElementById('lista-acciones');
 
-    Sortable.create(lista, {
+    const listaAuxiliar = Sortable.create(lista, {
         animation: 150,
         chosenClass: "seleccionado",
         dragClass: "drag",
         filter: ".filtrado",
+        handle: '.div_numero',
+        // Se puede escoger el identificador
 
 
         onChoose: function (e) {
             console.log(e.oldIndex);
+            var item = e.item;
+            console.log(item);
+//            item.find('.eliminar').on('click', function() {
+//                console.log('eliminado');
+//            })
+            $('#' + item.id + ' .eliminar').on('click', function() {
+                console.log('emiliando')
+            })
+//            console.log($('#' + item.id + ' .relato')[0].innerHTML)
         },
         onEnd: (e) => {
             console.log('Se inserto un elemento');
@@ -59,7 +72,14 @@ function ordenar(){
 //            $('#' +item.id+ ' .numero')[0].innerHTML = e.newIndex;
         },
 
-        group: "lista-accion",
+        group: {
+            name: 'lista-accion',
+            pull: true
+
+        },
+        onRemove: (e) => {
+
+        },
         store: {
             // Guardamos el orden
             set: (sortable) => {

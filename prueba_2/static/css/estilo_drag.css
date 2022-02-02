@@ -77,7 +77,7 @@ h2 {
     vertical-align: middle;
     border-radius: 10px;
     margin-bottom: 20px;
-    cursor: move;
+
     display: flex;
     flex: 1;
 }
@@ -89,6 +89,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: move;
 
 
 }
@@ -111,4 +112,9 @@ h2 {
 .relato1, .q, .para_que1 {
     color: #099209;
 
+}
+
+
+.eliminar {
+    background-color: red;
 }

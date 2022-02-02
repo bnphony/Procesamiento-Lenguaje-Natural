@@ -16,6 +16,8 @@ import speech_recognition as sr
 from core.erp.pre_procesar import procesar
 from core.erp.conexiones import crearDependencia
 
+import json
+
 
 class PantallaHola(FormView):
     model = Auxiliar
@@ -141,6 +143,7 @@ class Accion_1(ListView):
         data = {}
         try:
             action = request.POST['action']
+
             if action == 'searchdata':
                 print('Entro aqui sfdsfd dfd')
                 variable = Auxiliar.objects.all().last()
@@ -155,6 +158,9 @@ class Accion_1(ListView):
                     item['para_que'] = frase.para_que
                     item['posicion'] = frase.posicion
                     data.append(item)
+
+
+
             else:
                 data['error'] = 'Ha ocurrido un error'
         except Exception as e:
@@ -189,7 +195,6 @@ class Backlog(ListView):
             if action == 'searchdata':
                 print('Entro aqui sfdsfd dfd')
                 variable = Auxiliar.objects.all().last()
-
                 acciones = Accion.objects.filter(aux_id=variable.id)
 
                 data = []
@@ -202,6 +207,14 @@ class Backlog(ListView):
                     item['posicion'] = frase.posicion
                     data.append(item)
 
+            elif action == 'orden_posicion':
+                print('entro al proceos de ordne')
+                orden = json.loads(request.POST['orden'])
+                ids = json.loads(request.POST['ids'])
+                for index, id in enumerate(ids):
+                    accion = Accion.objects.filter(id=id).first()
+                    accion.posicion = orden[index];
+                    accion.save()
             else:
                 data['error'] = 'Ha ocurrido un error'
         except Exception as e:
@@ -216,6 +229,7 @@ class Backlog(ListView):
         context['acciones_url'] = reverse_lazy('accion')
         context['entity'] = 'Categorias'
         context['mensaje'] = 'Historias de Usuario'
+        context['grafico'] = reverse_lazy('microservicios')
         return context
 
 class Grafico(ListView):
@@ -277,8 +291,8 @@ class Grafico(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Microservicios'
-        context['sub_title'] = 'Grafico de los Microservicios'
-        context['ingreso_url'] = reverse_lazy('prueba')
+        context['sub_title'] = 'Grafico de los Microservicios Encontrados'
+        context['backlog_url'] = reverse_lazy('backlog')
         context['entity'] = 'Microservicios'
         context['formAccion'] = AccionForm()
         return context
