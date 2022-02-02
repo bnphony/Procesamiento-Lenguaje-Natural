@@ -104,7 +104,7 @@ class Prueba(FormView):
 
                 for index, frase in enumerate(acciones):
                     nuevo = Accion(actor=frase['usuario'], que=frase['que'], para_que=frase['para_que'],
-                                   posicion=index + 1, grupo=frase['grupo'] ,aux_id=auxiliar.id)
+                                   posicion=index + 1, grupo=frase['grupo'], nombre=frase['nombre'], aux_id=auxiliar.id)
                     nuevo.save()
 
                 data['url'] = reverse_lazy('accion')
@@ -226,7 +226,7 @@ class Grafico(ListView):
     success_url = reverse_lazy('prueba')
 
     @method_decorator(csrf_exempt)
-    def dispath(self, request, *args, **kwargs):
+    def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
@@ -236,12 +236,35 @@ class Grafico(ListView):
             if action == 'searchdata':
                 print('Entro aqui sfdsfd dfd')
                 variable = Auxiliar.objects.all().last()
-
                 acciones = Accion.objects.filter(aux_id=variable.id)
-                datos = crearDependencia(acciones)
+
+                print('paso las acciones')
+                conexiones = crearDependencia(acciones)
+
+                print('paso aqui')
                 data = []
 
-                data = datos
+                nodes = []
+                for frase in acciones:
+                    item = {}
+                    item['id'] = frase.id
+                    item['usuario'] = frase.actor
+                    item['que'] = frase.que
+                    item['para_que'] = frase.para_que
+                    item['posicion'] = frase.posicion
+                    item['grupo'] = frase.grupo
+                    item['nombre'] = frase.nombre
+                    nodes.append(item)
+
+                links = []
+                for conexion in conexiones:
+                    item = {}
+                    item['source'] = conexion['source']
+                    item['target'] = conexion['target']
+                    links.append(item)
+
+                data.append(nodes)
+                data.append(links)
 
             else:
                 data['error'] = 'Ha ocurrido un error'

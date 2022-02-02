@@ -44,6 +44,7 @@ class Accion(models.Model):
     para_que = models.CharField(max_length=1000, verbose_name='Para_que')
     posicion = models.PositiveIntegerField()
     grupo = models.PositiveIntegerField()
+    nombre = models.CharField(max_length=100, verbose_name='Nombre')
     aux = models.ForeignKey(Auxiliar, on_delete=models.CASCADE, verbose_name='Auxiliar')
 
     def __str__(self):

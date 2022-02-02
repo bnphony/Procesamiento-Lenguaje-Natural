@@ -473,6 +473,7 @@ def procesar(usuario, texto):
 
     for index, oracion in enumerate(oraciones):
         oracion['grupo'] = 0
+        oracion['nombre'] = 'H' + str(index + 1)
 
     resultado = 0
     for index, oracion in enumerate(oraciones):

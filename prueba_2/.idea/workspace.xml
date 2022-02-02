@@ -19,11 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="01_02_2022_(1)">
-      <change afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="01_02_2022_(2)">
+      <change afterPath="$PROJECT_DIR$/core/erp/conexiones.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/erp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/erp/patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/patterns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/erp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/grafico.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/grafico.js" afterDir="false" />
@@ -387,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643730352886</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="01_02_2022_(2)">
+      <created>1643767516815</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1643767516815</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -432,7 +438,8 @@
     <MESSAGE value="31_01_2022_(1)" />
     <MESSAGE value="31_01_2022_(2)" />
     <MESSAGE value="01_02_2022_(1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="01_02_2022_(1)" />
+    <MESSAGE value="01_02_2022_(2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="01_02_2022_(2)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1643596534530">
@@ -499,10 +506,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1637695963563" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1643730354928">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1643767518745">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1643730354928" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1643767518745" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642090177587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
