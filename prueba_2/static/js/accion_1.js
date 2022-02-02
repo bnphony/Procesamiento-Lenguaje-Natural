@@ -50,7 +50,7 @@ function ordenar(){
         dragClass: "drag",
         filter: ".filtrado",
         handle: '.div_numero',
-        // Se puede escoger el identificador
+        // Se puede escoger el identifi fcador
 
 
         onChoose: function (e) {
