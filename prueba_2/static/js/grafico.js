@@ -169,7 +169,6 @@ function imprimir(datos) {
 
         contenedores
             .attr('transform', function(d) {
-                // console.log(d)
                 return 'translate(' + d.x + ',' + d.y + ')';
             })
 
@@ -229,7 +228,7 @@ function imprimir(datos) {
 
     var circulos = contenedores
         .append('circle')
-        .attr('r', 12)
+        .attr('r', 20)
         .attr('fill', function(d,  i) {
             return color(i);
         }).style('cursor', 'hand');
@@ -239,35 +238,36 @@ function imprimir(datos) {
         .append('text')
         .text((d) => d.nombre)
         .attr('text-anchor', 'middle')
-        .style('cursor', 'hand');
-    console.log('solo son pensamientos')
+        .style('cursor', 'hand')
+        .attr('stroke', '#fff');
+
 
     let nombre = document.getElementById('name');
+    let descripcion = document.getElementById('descripcion_historia')
     const aux = d3.select('#dependencias');
 
     function mostrarInformacion(a) {
-    $('#myModalClient').modal('show');
-    source = a;
-    console.log(source);
-    var cont = 0;
-    const dependencias = aux.selectAll('li')
-        .data(datos[1].filter(function(d) {
-                console.log(d);
-                return d.source == source || d.target == source;
-            }));
-        dependencias
-        .enter()
-            .append('li')
-            .style('color', 'purple')
+        $('#myModalClient').modal('show');
+        source = a;
+        var cont = 0;
+        const dependencias = aux.selectAll('li')
+            .data(datos[1].filter(function(d) {
 
-        .merge(dependencias)
-            .transition().duration(1000)
-            .text(function(d, i) {
-                console.log(d, i);
-                cont += 1;
-                return d.source.nombre + ' > ' + d.target.nombre;
-            })
-            .style('color', 'green');
+                    return d.source == source || d.target == source;
+                }));
+            dependencias
+            .enter()
+                .append('li')
+                .style('color', 'purple')
+
+            .merge(dependencias)
+                .transition().duration(1000)
+                .text(function(d, i) {
+                    console.log(d, i);
+                    cont += 1;
+                    return d.source.nombre + ' -> ' + d.target.nombre;
+                })
+                .style('color', 'green');
 
         d3.select('#dependencias').selectAll('li')
             .data(datos[1].filter(function(d) {
@@ -276,18 +276,19 @@ function imprimir(datos) {
             .exit()
             .remove();
 
-    nombre.innerHTML = 'ID historia de usuario: ' + a.id;
-    if (cont == 0) {
-        d3.select('#descripcion')
-            .select('span')
-            .style('display', 'block');
-    } else {
-        d3.select('#descripcion')
-            .select('span')
-            .style('display', 'none');
-    }
+        nombre.innerHTML = '<strong>ID: </strong>' + a.nombre;
+        descripcion.innerHTML = 'Como '+ a.usuario + ' quiero que el sistema ' + a.que + ' para ' + a.para_que;
+        if (cont == 0) {
+            d3.select('#descripcion')
+                .select('#no')
+                .style('display', 'block');
+        } else {
+            d3.select('#descripcion')
+                .select('#no')
+                .style('display', 'none');
+        }
 
-}
+    }
 }
 
 

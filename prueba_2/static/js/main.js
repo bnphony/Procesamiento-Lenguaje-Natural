@@ -123,6 +123,7 @@ $(function () {
             if(!data.hasOwnProperty('error')){
                window.location.href = data['url'];
             }
+            console.log(data);
         }).fail(function (jqYHR, textStatus, errorThrown) {
             alert(textStatus + ': ' + errorThrown);
         }).always(function (data) {

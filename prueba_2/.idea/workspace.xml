@@ -19,16 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="02_02_2022_(1)">
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="02_02_2022_(2)">
+      <change afterPath="$PROJECT_DIR$/static/js/notificacion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/erp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/estilo_drag.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/estilo_drag.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/grafico.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/grafico.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/accion_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/accion_1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/backlog.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/backlog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pantallas/acciones_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/acciones_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pantallas/backlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/backlog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/grafico.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/grafico.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pantallas/grafico.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/grafico.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pantallas/historia.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/historia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,22 +61,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../mikuhatsune/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\lib" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\img" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\core" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\core\erp" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\templates\pantallas" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\static\lib" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\lib" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\img" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\core" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pre_procesar">
@@ -403,7 +407,28 @@
       <option name="project" value="LOCAL" />
       <updated>1643815813576</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="02_02_2022_(1)">
+      <created>1643833315806</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1643833315806</updated>
+    </task>
+    <task id="LOCAL-00037" summary="02_02_2022_(2)">
+      <created>1643833378266</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1643833378266</updated>
+    </task>
+    <task id="LOCAL-00038" summary="02_02_2022_(2)">
+      <created>1643833399860</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1643833399860</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -450,17 +475,14 @@
     <MESSAGE value="01_02_2022_(1)" />
     <MESSAGE value="01_02_2022_(2)" />
     <MESSAGE value="02_02_2022_(1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="02_02_2022_(1)" />
+    <MESSAGE value="02_02_2022_(2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="02_02_2022_(2)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1643596534530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1643596534530" />
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635186592894">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1635186592894" />
     <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1642181925288">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -469,10 +491,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1635369899633" />
-    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1643823704680">
+    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1643835526802">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1643823704680" />
+    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1643835526802" />
     <state width="659" height="220" key="GridCell.Tab.0.bottom" timestamp="1643668095979">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -517,10 +539,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1637695963563" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1643815815794">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1643833401188">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1643815815794" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1643833401188" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642090177587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

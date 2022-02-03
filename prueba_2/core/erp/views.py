@@ -116,6 +116,7 @@ class Prueba(FormView):
         except Exception as e:
             print('Ingreso a la excepcion')
             data['error'] = str(e)
+            print(data)
         return JsonResponse(data, safe=False)
 
     def get_context_data(self, **kwargs):
@@ -153,14 +154,17 @@ class Accion_1(ListView):
                 data = []
                 for frase in acciones:
                     item = {}
+                    item['id'] = frase.id
                     item['usuario'] = frase.actor
                     item['que'] = frase.que
                     item['para_que'] = frase.para_que
                     item['posicion'] = frase.posicion
                     data.append(item)
 
-
-
+            elif action == 'eliminar_data':
+                id = request.POST['id']
+                accion = Accion.objects.filter(id=id).first()
+                accion.delete()
             else:
                 data['error'] = 'Ha ocurrido un error'
         except Exception as e:

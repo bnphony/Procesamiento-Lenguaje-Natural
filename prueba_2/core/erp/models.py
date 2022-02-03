@@ -21,7 +21,7 @@ class User_story(models.Model):
 
 
 class Auxiliar(models.Model):
-    relatoUsuario = models.CharField(max_length=1000, verbose_name='Historia')
+    relatoUsuario = models.CharField(max_length=10000, verbose_name='Historia')
 
     def __str__(self):
         return '{}'.format('Historia')

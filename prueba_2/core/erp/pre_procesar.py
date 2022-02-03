@@ -130,7 +130,7 @@ def encontrar_sustantivos(doc, patterns):
             start = min(match[0])
             end = max(match[0]) + 1
             act = Span(doc, start, end, label="JUNTAR_OPCIONALES")
-            print(act)
+            # print(act)
             with doc.retokenize() as retokenizer:
                 retokenizer.merge(act)
         final = len(doc)
@@ -475,15 +475,20 @@ def procesar(usuario, texto):
         oracion['grupo'] = 0
         oracion['nombre'] = 'H' + str(index + 1)
 
+    for oracion in oraciones:
+        if not isinstance(oracion['que'], spacy.tokens.span.Span):
+            oracion['que'] = nlp(oracion['que'])
+
     resultado = 0
     for index, oracion in enumerate(oraciones):
-        sustantivo = [token for token in oracion['que'] if token.pos_ == "NOUN"][0]
+        sustantivo = [token for token in oracion['que'] if token.pos_ == "NOUN"]
         for n, i in enumerate(grupos):
-            for palabra in i:
-                resultado = sustantivo.similarity(palabra)
-                if (resultado > 0.85):
-                    oracion['grupo'] = n + 1
-                    break
+            if len(sustantivo) > 0:
+                for palabra in i:
+                    resultado = sustantivo[0].similarity(palabra)
+                    if (resultado > 0.85):
+                        oracion['grupo'] = n + 1
+                        break
 
     print("oraciones encontradas: ", len(oraciones))
 
