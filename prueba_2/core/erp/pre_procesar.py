@@ -209,7 +209,8 @@ def aplicar_dependencias(doc):
                 tokens_ids[tokens_ids.index(preview) + 1:] + tokens_ids[:tokens_ids.index(preview)]):
             if not set(oracion).isdisjoint(preview):
                 valor = list(set(oracion + preview))
-                tokens_ids[tokens_ids.index(preview)] = valor
+                if preview in tokens_ids:
+                    tokens_ids[tokens_ids.index(preview)] = valor
                 if oracion in tokens_ids:
                     tokens_ids.remove(oracion)
                 preview = valor
@@ -234,7 +235,8 @@ def aplicar_dependencias(doc):
                 tokens_ids[tokens_ids.index(preview) + 1:] + tokens_ids[:tokens_ids.index(preview)]):
             if (not set(oracion).isdisjoint(preview)):
                 valor = list(set(oracion + preview))
-                tokens_ids[tokens_ids.index(preview)] = valor
+                if preview in tokens_ids:
+                    tokens_ids[tokens_ids.index(preview)] = valor
                 if (oracion in tokens_ids):
                     tokens_ids.remove(oracion)
                 preview = valor
