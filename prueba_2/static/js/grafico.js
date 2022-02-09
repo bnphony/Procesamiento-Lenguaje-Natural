@@ -9,8 +9,8 @@ var altura_min = 100;
 
 var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-var rw = 195;
-var rh = 195;
+var rw = 155;
+var rh = 155;
 
 const x = d3.scaleBand()
     .rangeRound([0, width])

@@ -258,7 +258,7 @@ class Grafico(ListView):
 
                 print('paso las acciones')
                 conexiones = crearDependencia(acciones)
-
+                print(conexiones)
                 print('paso aqui')
                 data = []
 

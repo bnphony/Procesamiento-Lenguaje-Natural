@@ -275,7 +275,7 @@ pattern10 = [
         "LEFT_ID": "verb_obj_acl",
         "REL_OP": ">", # Se cambio el >> por .
         "RIGHT_ID": "objeto_xcomp",
-        "RIGHT_ATTRS": {"DEP": {"IN": ["advcl", "acl"]}, "POS": {"IN": ["NOUN", "VERB"]}},
+        "RIGHT_ATTRS": {"DEP": {"IN": ["acl"]}, "POS": {"IN": ["NOUN", "VERB"]}},
     }
 ]
 
@@ -1076,6 +1076,25 @@ pattern45 = [
         "RIGHT_ID": "objeto_compound",
         "RIGHT_ATTRS": {"DEP": "compound"},
     },
+]
+
+pattern46 = [
+    {
+        "RIGHT_ID": "complemento_verbo_advmod_fixed",
+        "RIGHT_ATTRS": {"POS": "VERB"}
+    },
+    {
+        "LEFT_ID": "complemento_verbo_advmod_fixed",
+        "REL_OP": ".",
+        "RIGHT_ID": "objeto_advmod",
+        "RIGHT_ATTRS": {"DEP": "advmod"}
+    },
+    {
+        "LEFT_ID": "objeto_advmod",
+        "REL_OP": ".",
+        "RIGHT_ID": "objeto_fixed",
+        "RIGHT_ATTRS": {"DEP": "fixed"}
+    }
 ]
 
 # Reglas de Estructura

@@ -20,23 +20,38 @@ puntuacion = string.punctuation + '!¿'
 stopwords_spacy = list(STOP_WORDS)
 
 stop_words = ['cual', 'se', 'este', 'luego']
+separadores = ("ademas", "tambien", "asimismo", "conjuntamente", "adicionalmente",
+               "encima", "igualmente", "asi mismo", "por añadidura", "de la misma manera",
+               "del mismo modo", "de igual forma", "por otra parte", "de la misma forma", "de igual modo",
+               "de igual manera")
 
+# Componentes para quitar las tildes
+a, b = "áíúéóÁÍÚÉÓ", "aiueoAIUEO"
+trans = str.maketrans(a, b)
 
 
 def text_data_cleaning(oracion):
+    # Quitar las tildes
+    oracion = oracion.lower()  # Transformar todo a minisculas
+    oracion = oracion.translate(trans)
+
     doc = nlp(oracion)
+    encontrar_separadores(doc)
     tokens = []
     for token in doc:
         if token.lemma_ in ("quiero", "querer", "necesitar", "desear", "permitir"):
             aux = "."
-            # aux = token.lemma_.strip().lower()
+        elif token.text in separadores:
+            aux = token.text.strip().lower()
+            tokens.append(".")
+
         else:
             aux = token.text.strip().lower()
         tokens.append(aux)
     clean_tokens = []
     for token in tokens:
         if token not in stop_words and token not in puntuacion and token not in (
-        "querer", "necesitar", "desear", "permitir"):
+                "querer", "necesitar", "desear", "permitir"):
             clean_tokens.append(token)
         if token in ("$", "."):
             clean_tokens.append(token)
@@ -60,12 +75,42 @@ def text_limpio(oracion):
     tokens_limpios = []
     for token in tokens:
         if token not in puntuacion and token not in (
-        "querer", "necesitar", "desear", "permitir") and token not in stop_words:
+                "querer", "necesitar", "desear", "permitir") and token not in stop_words:
             tokens_limpios.append(token)
         if token in ("$"):
             tokens_limpios.append(token)
 
     return tokens_limpios
+
+
+def encontrar_separadores(doc):
+    matcher_separadores = PhraseMatcher(nlp.vocab, validate=True)
+    separadores = ("asi mismo", "por añadidura", "de la misma manera",
+                   "del mismo modo", "por otra parte", "de igual forma", "de la misma forma", "de igual modo",
+                   "de igual manera")
+    patterns = [nlp.make_doc(text) for text in separadores]
+    matcher_separadores.add("SEPARADORES", patterns)
+
+    matches = matcher_separadores(doc)
+    tokens_ids = [(start, end) for _, start, end in matches]
+
+    resultado = 0
+    l = tokens_ids
+    l = sorted(l)
+
+    for index, span in enumerate(tokens_ids):
+        match = [(np.array(match1) - resultado) for match1 in l]
+        comienzo = len(doc)
+        if len(match) != 0:
+            start = min(match[0])
+            end = max(match[0])
+            act = Span(doc, start, end, label="SEPARADORES")
+            with doc.retokenize() as retokenizer:
+                retokenizer.merge(act)
+        final = len(doc)
+        resultado = (comienzo - final)
+        match.remove(match[0])
+        l = match
 
 
 def limpiar_encontrar_sustantivos(matches, doc):
@@ -139,7 +184,6 @@ def encontrar_sustantivos(doc, patterns):
         l = match
 
 
-
 def aplicar_dependencias(doc):
     matcher_dependencia = DependencyMatcher(nlp.vocab, validate=True)
     matcher_dependencia.add("OBJECTO_COMPUESTO", [pattern6])
@@ -183,9 +227,9 @@ def aplicar_dependencias(doc):
     matcher_dependencia.add("NOUN_NMOD_NUMMOD", [pattern36])
     matcher_dependencia.add("NOUN_NUMMOD", [pattern37])
     matcher_dependencia.add("ADJ_NSUBJ_NMOD_ACL", [pattern43])
+    matcher_dependencia.add("COMPVERB_ADVMOD_FIXED", [pattern46])
 
     matches = matcher_dependencia(doc)
-
 
     matches_erroneos = []
     for match_limpiar in matches:
@@ -196,8 +240,42 @@ def aplicar_dependencias(doc):
         if nlp.vocab.strings[match_limpiar[0]] in ("VERBO_OBL", "VERBO_OBJETO", "VERBO_CCOMP"):
             if (max(match_limpiar[1]) - min(match_limpiar[1])) > 7 or (match_limpiar[1][0] > match_limpiar[1][-1]):
                 matches_erroneos.append(match_limpiar)
+        if nlp.vocab.strings[match_limpiar[0]] in ("VERBO_CCOMP_ADVCL"):  # Se agrego ultimo
+            if (match_limpiar[1][1] - min(match_limpiar[1]) > 3):
+                matches_erroneos.append(match_limpiar)
+        if nlp.vocab.strings[match_limpiar[0]] in ("VERBO_NSUBJ_ACL_OBJ_OBJ"):  # Se agrego ultimo
+            if (max(match_limpiar[1][:2]) - min(match_limpiar[1][:2]) > 3):
+                matches_erroneos.append(match_limpiar)
+        if nlp.vocab.strings[match_limpiar[0]] in ("VERBO_ADVCL_OBJ"):
+            if (match_limpiar[1][1] - min(match_limpiar[1]) > 5):
+                matches_erroneos.append(match_limpiar)
 
     # Se borra los matches erroneas asegurando que no se salten los valores
+    for match in matches_erroneos:
+        if match in matches:
+            matches.remove(match)
+
+    # # OJO -----------------------------
+    # # Funcion para escoger solo la primera busqueda del mismo matcher
+    # preview = []
+    # matches_erroneos = []
+    for oracion in matches:
+        preview = oracion
+        for index, i in enumerate(matches[matches.index(preview) + 1:] + matches[:matches.index(preview)]):
+            if (not set(i[1]).isdisjoint(preview[1])) and nlp.vocab.strings[i[0]] == nlp.vocab.strings[preview[0]] and \
+                    nlp.vocab.strings[i[0]] in ("VERBO_OBJETO"):
+                matches.remove(i)
+
+    # OJO ---------
+    # Funcion para eliminar las busquedas que no esten en orden
+    matches_erroneos = []
+    for match_limpiar in matches:
+        if (match_limpiar[1] != sorted(match_limpiar[1])):
+            # print("MATCHER DESORDENADO:", match_limpiar[1])
+            # print("MATCHER ORDENADO: ", sorted(match_limpiar[1]))
+            matches_erroneos.append(match_limpiar)
+
+    # Eliminar los match erroneos que se se encontraron
     for match in matches_erroneos:
         matches.remove(match)
 
@@ -214,12 +292,12 @@ def aplicar_dependencias(doc):
                 if oracion in tokens_ids:
                     tokens_ids.remove(oracion)
                 preview = valor
-                if (doc[preview[0] - 1].dep_ == "mark" and index != 0):
-                    for n, oracion in enumerate(tokens_ids):
-                        if ((min(preview) - max(oracion)) in [0, 1, 2]):
-                            valor = list(set(oracion + preview))
-                            tokens_ids[tokens_ids.index(preview)] = valor
-                            tokens_ids.remove(oracion)
+                # if (doc[preview[0] - 1].dep_ == "mark" and index != 0):
+                #     for n, oracion in enumerate(tokens_ids):
+                #         if ((min(preview) - max(oracion)) in [0, 1, 2]):
+                #             valor = list(set(oracion + preview))
+                #             tokens_ids[tokens_ids.index(preview)] = valor
+                #             tokens_ids.remove(oracion)
             if (min(oracion) > min(preview) and max(oracion) < max(preview)):
                 valor = list(set(oracion + preview))
                 tokens_ids[tokens_ids.index(preview)] = valor
@@ -240,12 +318,12 @@ def aplicar_dependencias(doc):
                 if (oracion in tokens_ids):
                     tokens_ids.remove(oracion)
                 preview = valor
-                if (doc[preview[0] - 1].dep_ == "mark" and index != 0):
-                    for n, oracion in enumerate(tokens_ids):
-                        if ((min(preview) - max(oracion)) in [0, 1, 2]):
-                            valor = list(set(oracion + preview))
-                            tokens_ids[index] = valor
-                            tokens_ids.remove(oracion)
+                # if (doc[preview[0] - 1].dep_ == "mark" and index != 0):
+                #     for n, oracion in enumerate(tokens_ids):
+                #         if ((min(preview) - max(oracion)) in [0, 1, 2]):
+                #             valor = list(set(oracion + preview))
+                #             tokens_ids[index] = valor
+                #             tokens_ids.remove(oracion)
             if (min(oracion) > min(preview) and max(oracion) < max(preview)):
                 valor = list(set(oracion + preview))
                 tokens_ids[tokens_ids.index(preview)] = valor
@@ -329,7 +407,8 @@ def revisar(usuario, oracion_que, oracion_para_que):
     if (len(oraciones1) > 1):
         for index, i in enumerate(oraciones1):
             if index > 0:
-                if oraciones1[index][0].head.text == oraciones1[index - 1][-1].text or oraciones1[index][0].head.text == oraciones1[index - 1][0].text:
+                if oraciones1[index][0].head.text == oraciones1[index - 1][-1].text or oraciones1[index][0].head.text == \
+                        oraciones1[index - 1][0].text:
                     oraciones1[index - 1] = doc1[oraciones1[index - 1][0].i:oraciones1[index][-1].i + 1]
                     oraciones1.remove(i)
 
@@ -352,7 +431,9 @@ def revisar(usuario, oracion_que, oracion_para_que):
     if (len(oraciones2) > 2):
         for index, i in enumerate(oraciones2):
             if index > 1:
-                if oraciones2[index][0].head.text == oraciones2[index - 1][-1].text or oraciones2[index][0].head.text == oraciones2[index - 1][0].text or oraciones2[index][0].head.text == oraciones2[index - 1][-1].head.text:
+                if oraciones2[index][0].head.text == oraciones2[index - 1][-1].text or oraciones2[index][0].head.text == \
+                        oraciones2[index - 1][0].text or oraciones2[index][0].head.text == oraciones2[index - 1][
+                    -1].head.text:
                     oraciones2[index - 1] = doc2[oraciones2[index - 1][0].i:oraciones2[index][-1].i + 1]
                     oraciones2.remove(i)
 
@@ -376,7 +457,8 @@ def pre_procesar_oraciones(usuario, oracion):
     que = []
     para_que = []
     para = 0
-    con_que = ("para", "con la finalidad", "con el finalidad", "con el objetivo", "con el objeto", "con el fin", "poder")
+    con_que = (
+    "para", "con la finalidad", "con el finalidad", "con el objetivo", "con el objeto", "con el fin", "poder")
     for token in oracion.as_doc():
         if (token.pos_ == "VERB" and para == 0):
             para += 1
@@ -416,6 +498,7 @@ def procesar(usuario, texto):
     texto = " ".join(text)
     doc = nlp(texto)
     patterns = [pattern32, pattern33, pattern34, pattern35, pattern36, pattern37]
+
     encontrar_sustantivos(doc, patterns)
 
     tokens_ids = aplicar_dependencias(doc)
@@ -428,23 +511,24 @@ def procesar(usuario, texto):
                 oraciones_sin_limpiar[index - 1] = doc[min(tokens_ids[index - 1]):max(indices) + 1]
                 continue
         oraciones_sin_limpiar.append(oracion_busqueda)
-
-        # print("SENTENCE: ", oracion_busqueda)
-
+        # print("SENTENCE:", oracion_busqueda)
 
     # Encontrar los grupos de los sustantivos relacionados
     resultado = 0
     contador = 0
     grupos = []
     sustantivos = [token for token in doc if token.pos_ == "NOUN"]
+    print(sustantivos)
     for index, token in enumerate(sustantivos):
         if token.pos_ == "NOUN":
             for i in sustantivos[index + 1:]:
                 resultado = token.similarity(i)
-                if (resultado > 0.85):
+                # print(f"el sustantivo < {token} > es similar a < {i} > con < {resultado} >")
+                if (resultado > 0.75):
                     grupos.append([token, i])
                     contador += 1
 
+    print(grupos)
     preview = []
     for index, grupo in enumerate(grupos):
         preview = grupo
@@ -456,7 +540,7 @@ def procesar(usuario, texto):
                 grupos[grupos.index(preview)] = valor
                 preview = valor
 
-
+    print(grupos)
 
     oraciones = []
     # acciones = oraciones_sin_limpiar
@@ -478,20 +562,25 @@ def procesar(usuario, texto):
         oracion['nombre'] = 'H' + str(index + 1)
 
     for oracion in oraciones:
-        if not isinstance(oracion['que'], spacy.tokens.span.Span):
+        if not isinstance(oracion['que'], spacy.tokens.span.Span) and not isinstance(oracion['que'], spacy.tokens.doc.Doc):
             oracion['que'] = nlp(oracion['que'])
+            encontrar_sustantivos(oracion['que'], patterns)
 
     resultado = 0
+
     for index, oracion in enumerate(oraciones):
         sustantivo = [token for token in oracion['que'] if token.pos_ == "NOUN"]
+
         for n, i in enumerate(grupos):
             if len(sustantivo) > 0:
                 for palabra in i:
-                    resultado = sustantivo[0].similarity(palabra)
-                    if (resultado > 0.85):
-                        oracion['grupo'] = n + 1
-                        break
+                    for aux in sustantivo:
+                        resultado = aux.similarity(palabra)
+                        if (resultado > 0.85):
+                            oracion['grupo'] = n + 1
+                            break
 
     print("oraciones encontradas: ", len(oraciones))
 
     return oraciones
+

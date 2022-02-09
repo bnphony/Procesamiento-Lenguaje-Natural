@@ -6,25 +6,25 @@ def crearDependencia(oraciones):
     links = []
 
     conexiones = [oracion for oracion in oraciones if oracion.grupo != 0]
-
+    print([conexion.grupo for conexion in oraciones])
 
     for oracion in conexiones:
         preview = oracion
         for n in (conexiones[:conexiones.index(preview)] + conexiones[conexiones.index(preview) + 1:]):
             links.append([preview.id, n.id])
 
-    for link in links:
+    review = [sorted(link) for link in links]
+
+    for link in review:
         preview = link
-        for n in links[:links.index(preview)] + links[links.index(preview) + 1:]:
+        for n in review[:review.index(preview)] + review[review.index(preview) + 1:]:
             if not set(n).isdisjoint(preview):
-                valor = list(set(preview + n))
-                if n in links:
-                    links.remove(n)
-                links[links.index(preview)] = valor
-                preview = valor
+                if preview == n:
+                    if n in review:
+                        review.remove(n)
 
     conexiones = []
-    for link in links:
+    for link in review:
         conexiones.append({'source': link[0], 'target': link[1]})
 
     return conexiones
