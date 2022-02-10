@@ -124,6 +124,7 @@ class Prueba(FormView):
         context['title'] = 'Historia de Usuario'
         context['acciones'] = reverse_lazy('prueba')
         context['mensaje'] = 'Bienvenido'
+        context['url'] = 'inicio'
         return context
 
 
@@ -177,9 +178,10 @@ class Accion_1(ListView):
         context['title'] = 'Lista de Acciones'
         context['sub_title'] = 'Lista de Historias de Usuario Encontradas'
         context['ingreso_url'] = reverse_lazy('prueba')
-        context['entity'] = 'Categorias'
+        context['entity'] = 'Historias de Usuario'
         context['mensaje'] = 'Historias de Usuario'
         context['backlog'] = reverse_lazy('backlog')
+        context['url'] = 'opciones'
         return context
 
 
@@ -231,9 +233,11 @@ class Backlog(ListView):
         context['title'] = 'Product Backlog'
         context['sub_title'] = 'Product Backlog'
         context['acciones_url'] = reverse_lazy('accion')
-        context['entity'] = 'Categorias'
+        context['ingreso_url'] = reverse_lazy('prueba')
+        context['entity'] = 'Producto Backlog'
         context['mensaje'] = 'Historias de Usuario'
         context['grafico'] = reverse_lazy('microservicios')
+        context['url'] = 'opciones'
         return context
 
 class Grafico(ListView):
@@ -297,8 +301,10 @@ class Grafico(ListView):
         context['title'] = 'Microservicios'
         context['sub_title'] = 'Grafico de los Microservicios Encontrados'
         context['backlog_url'] = reverse_lazy('backlog')
+        context['ingreso_url'] = reverse_lazy('prueba')
         context['entity'] = 'Microservicios'
         context['formAccion'] = AccionForm()
+        context['url'] = 'opciones'
         return context
 
 

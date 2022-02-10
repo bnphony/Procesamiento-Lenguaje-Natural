@@ -82,7 +82,7 @@ function ordenar(){
         chosenClass: "seleccionado",
         dragClass: "drag",
         filter: ".filtrado",
-        handle: ['.div_numero', '.eliminar'],
+        handle: ['.eliminar'],
         // Se puede escoger el identifi fcfffador
 
 
@@ -99,7 +99,7 @@ function ordenar(){
                 $('#' + item.id + ' .eliminar').one('click', function() {
                     contador += 1;
                     console.log(contador);
-                    alert_action('Notificacion', 'Esta seguro de eliminar esto', function() {
+                    alert_action('Notificacion', 'Esta seguro de eliminar esta Historia de Usuario?', function() {
                         eliminarElemento(item.id);
                         item.parentNode.removeChild(item);
                         enumerar();
@@ -127,7 +127,7 @@ function ordenar(){
 
         },
         onRemove: (e) => {
-            console.log('xxxx')
+
         },
         store: {
             // Guardamos el orden

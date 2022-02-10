@@ -126,3 +126,11 @@ h2 {
 }
 
 
+.botones .regresar {
+    float: left;
+}
+
+.botones .continuar {
+    float: right;
+}
+

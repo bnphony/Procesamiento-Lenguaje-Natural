@@ -8,15 +8,19 @@
 
 {% block content %}
 <h2>{{ sub_title }}</h2>
+<div><em> * Elimine las historias de usuario que no sean de utilidad o que sean erroneas</em></div>
+<br>
 <div class="contenedor">
     <div class="lista-acciones" id="lista-acciones">
 
     </div>
 </div>
+<br>
 <div class="botones">
-    <a href="{{ backlog }}" class="btn btn-primary"> Continuar </a>
+    <a href="{{ ingreso_url }}" class="btn btn-danger regresar"><i class="fas fa-arrow-left"></i> Regresar </a>
+    <a href="{{ backlog }}" class="btn btn-primary continuar"><i class="fas fa-list"></i>  Generar Product Backlog </a>
 </div>
-
+<br>
 
 
 

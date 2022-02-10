@@ -76,3 +76,11 @@ h2 {
     color: #099209;
 
 }
+
+.botones .regresar {
+    float: left;
+}
+
+.botones .continuar {
+    float: right;
+}
