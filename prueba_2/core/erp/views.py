@@ -79,12 +79,9 @@ class Prueba(FormView):
                         print('Losiento no se puede entender...')
                 data['audio'] = text
             elif action == 'voz':
-                r = sr.Recognizer()
-                # r.pause_threshold = 0.8;
-                r.dynamic_energy_threshold = True;
-                # r.energy_threshold = 300;
-                r.operation_timeout = 5;
-
+                r = sr.Recognizer()                
+                r.dynamic_energy_threshold = True                
+                r.operation_timeout = 5
                 with sr.Microphone() as source:
                     print('Habla .....')
                     r.adjust_for_ambient_noise(source, duration=1)
@@ -96,6 +93,8 @@ class Prueba(FormView):
                         print("Perdon, pero no entiendo")
                         data['error'] = 'No se entiende'
                 data['voz'] = text
+
+                
             elif action == 'pre_procesar':
 
                 usuario = request.POST['nombreUsuario']
@@ -200,9 +199,9 @@ class Backlog(ListView):
             action = request.POST['action']
             if action == 'searchdata':
                 print('Entro aqui sfdsfd dfd')
+
                 variable = Auxiliar.objects.all().last()
                 acciones = Accion.objects.filter(aux_id=variable.id)
-
                 data = []
                 for frase in acciones:
                     item = {}

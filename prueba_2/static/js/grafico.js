@@ -136,16 +136,13 @@ function imprimir(datos) {
         .force('x', d3.forceX().x(function(d) {
             id += 1;
             const x = d3.select('#h' + id).attr('x')
-
             n = parseInt(x);
             n = n + (rw / 2) + padding;
-
+            console.log('HU ' + id + ' coordenada X: ', n);
             return n;
         }).strength(0.5))
         .force('y', d3.forceY().y(function(d, i) {
-
         var altura = 0;
-
         if (i % columnas == 0 && i != 0) {
             n_rh += 1;
         }
@@ -155,6 +152,7 @@ function imprimir(datos) {
         if ( n_rh > 1) {
             altura = ((rh * n_rh) - (rh / 2)) + padding + 15;
         }
+        console.log('HU ' + (i + 1) + ' coordenada Y: ', n);
         return altura;
         }).strength(0.5))
         .force("link", d3.forceLink()
@@ -164,6 +162,8 @@ function imprimir(datos) {
             }).strength(0)
         )
         .on("tick", ticked);
+
+
 
     function ticked() {
 

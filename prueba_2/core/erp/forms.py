@@ -24,7 +24,7 @@ class IngresoRelatoUsuarioForm(ModelForm):
                 attrs={
                     'placeholder': 'Ingrese un relato de usuario',
                     'autocomplete': 'off',
-                    'style': 'width: 60%; margin: 20px'
+                    'style': 'width: 60%; margin: 20px',
                 }
             )
         }

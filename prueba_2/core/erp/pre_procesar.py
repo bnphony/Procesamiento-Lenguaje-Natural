@@ -165,6 +165,9 @@ def encontrar_sustantivos(doc, patterns):
 
     matches = matcher_sustantivos(doc)
     matches = limpiar_encontrar_sustantivos(matches, doc)
+
+    # print([match for match in matches])
+    # print([doc[min(token):max(token) + 1] for token in matches])
     resultado = 0
     l = matches
     l = sorted(l)
@@ -330,6 +333,8 @@ def aplicar_dependencias(doc):
                 if (oracion in tokens_ids):
                     tokens_ids.remove(oracion)
                 preview = valor
+
+
 
     return tokens_ids
 
@@ -502,7 +507,7 @@ def procesar(usuario, texto):
     encontrar_sustantivos(doc, patterns)
 
     tokens_ids = aplicar_dependencias(doc)
-
+    print(tokens_ids)
     oraciones_sin_limpiar = []
     for index, indices in enumerate(tokens_ids):
         oracion_busqueda = doc[min(indices):max(indices) + 1]
@@ -513,12 +518,13 @@ def procesar(usuario, texto):
         oraciones_sin_limpiar.append(oracion_busqueda)
         # print("SENTENCE:", oracion_busqueda)
 
+
     # Encontrar los grupos de los sustantivos relacionados
     resultado = 0
     contador = 0
     grupos = []
     sustantivos = [token for token in doc if token.pos_ == "NOUN"]
-    print(sustantivos)
+    # print(sustantivos)
     for index, token in enumerate(sustantivos):
         if token.pos_ == "NOUN":
             for i in sustantivos[index + 1:]:
@@ -528,7 +534,7 @@ def procesar(usuario, texto):
                     grupos.append([token, i])
                     contador += 1
 
-    print(grupos)
+    # print(grupos)
     preview = []
     for index, grupo in enumerate(grupos):
         preview = grupo
@@ -539,7 +545,6 @@ def procesar(usuario, texto):
                     grupos.remove(sus)
                 grupos[grupos.index(preview)] = valor
                 preview = valor
-
     print(grupos)
 
     oraciones = []
@@ -580,7 +585,39 @@ def procesar(usuario, texto):
                             oracion['grupo'] = n + 1
                             break
 
-    print("oraciones encontradas: ", len(oraciones))
+    # print("oraciones encontradas: ", len(oraciones))
+
+    for oracion in oraciones:
+        print("HISTORIA DE USUARIO: ", oracion)
 
     return oraciones
 
+usuario = "usuario"
+texto = """
+usuario Quiero crear un sistema que me permita procesar el texto hablado y convertirlo a texto plano además de esto requiero guardar el registro de la partida de ajedrez para conseguir los mejores resultado
+"""
+#
+# texto = """
+# como ejecutivo de cuenta quiero poder abrir una nueva cuenta de cheques a un cliente seleccionando el código de cliente y producto bancario
+#      registrar una nueva solicitud de crédito hipotecario a mi cliente
+#       indique cuales son los documentos que debo solicitar al cliente para procesar su solicitud de crédito hipotecario
+#      aprobar una solicitud de crédito hipotecario para que sea evaluada por el comité de crédito
+#      que el sistema requiera de mi aprobación para todo crédito a otorgar cuyo monto exceda los USD 10 MM
+#      poder ejecutar tu producto en todas las versiones de windows desde windows 95 en adelante
+#      que el sistema utilice la base de datos de pedidos existente en lugar de crear una nueva con la finalidad de evitar el tener que mantener una nueva base de datos
+#       que el sitio web responda a toda transacción o funcionalidad de negocio en menos de 5 segundos
+#       que el sitio web esté disponible el 99,999% de las veces que intente accederlo
+# """
+
+# texto = """
+# usuario Quiero crear un sistema que me permita procesar el texto hablado y convertirlo a texto plano además de esto requiero guardar el registro de la partida de ajedrez para conseguir los mejores resultados
+# """
+#
+# texto = """
+# Como estudiante quiero crear un sistema que convierta el audio o archivo de audio en texto, luego quiero que encuentre las historias de usuario ademas de generar el product backlog por ultimo quiero graficar las dependencias
+# """
+
+# texto = """
+# consultar a los usuarios, registrar los usuarios, crear una ruta de trabajo, ir al trabajo
+# """
+# procesar(usuario, texto)

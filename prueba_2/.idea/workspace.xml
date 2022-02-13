@@ -19,8 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="10_02_2022_(1)">
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="11_02_2022_(1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/backlog.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/backlog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/grafico.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/grafico.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pantallas/historia.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/historia.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -451,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644503453791</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="11_02_2022_(1)">
+      <created>1644594659626</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1644594659626</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -503,7 +516,8 @@
     <MESSAGE value="08_02_2022_(1)" />
     <MESSAGE value="09_02_2022_(1)" />
     <MESSAGE value="10_02_2022_(1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="10_02_2022_(1)" />
+    <MESSAGE value="11_02_2022_(1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="11_02_2022_(1)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1643596534530">
@@ -518,38 +532,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1644443398688" />
-    <state width="1345" height="164" key="GridCell.Tab.0.bottom" timestamp="1644346595930">
+    <state width="1345" height="223" key="GridCell.Tab.0.bottom" timestamp="1644624879567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1644346595930" />
-    <state width="1345" height="164" key="GridCell.Tab.0.center" timestamp="1644346595929">
+    <state width="1345" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1644624879567" />
+    <state width="1345" height="223" key="GridCell.Tab.0.center" timestamp="1644624879567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1644346595929" />
-    <state width="1345" height="164" key="GridCell.Tab.0.left" timestamp="1644346595929">
+    <state width="1345" height="223" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1644624879567" />
+    <state width="1345" height="223" key="GridCell.Tab.0.left" timestamp="1644624879567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1644346595929" />
-    <state width="1345" height="164" key="GridCell.Tab.0.right" timestamp="1644346595930">
+    <state width="1345" height="223" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1644624879567" />
+    <state width="1345" height="223" key="GridCell.Tab.0.right" timestamp="1644624879567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1644346595930" />
-    <state width="659" height="220" key="GridCell.Tab.1.bottom" timestamp="1643668095980">
+    <state width="1345" height="223" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1644624879567" />
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1644624879568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="220" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1643668095980" />
-    <state width="659" height="220" key="GridCell.Tab.1.center" timestamp="1643668095979">
+    <state width="1345" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1644624879568" />
+    <state width="1345" height="223" key="GridCell.Tab.1.center" timestamp="1644624879567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="220" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1643668095979" />
-    <state width="659" height="220" key="GridCell.Tab.1.left" timestamp="1643668095979">
+    <state width="1345" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1644624879567" />
+    <state width="1345" height="223" key="GridCell.Tab.1.left" timestamp="1644624879567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="220" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1643668095979" />
-    <state width="659" height="220" key="GridCell.Tab.1.right" timestamp="1643668095980">
+    <state width="1345" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1644624879567" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right" timestamp="1644624879567">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="659" height="220" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1643668095980" />
+    <state width="1345" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1644624879567" />
     <state x="327" y="66" key="RollbackChangesDialog" timestamp="1642090174061">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -562,10 +576,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1637695963563" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1644503456297">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1644594661471">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1644503456297" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1644594661471" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642090177587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -116,14 +116,14 @@ function imprimir(data){
     }
 
     colocar_c(color);
-    console.log($("#lista-acciones").find('.relato'));
+//    console.log($("#lista-acciones").find('.relato'));
 }
 
 
 
 function guardarOrden(orden) {
-    console.log(orden);
-    console.log(ids);
+//    console.log(orden);
+//    console.log(ids);
     $.ajax({
         url: window.location.pathname,
         type: 'POST',
@@ -139,7 +139,7 @@ function guardarOrden(orden) {
 //        cache: false,
     }).done(function(data) {
         if(!data.hasOwnProperty('error')) {
-            console.log('se guardo el registro de orden')
+//            console.log('Se guardo el nuevo orden')
         }
     }).fail(function(jqXHR, textStatus, errorThrown) {
         alert(textStatus + ': ' + errorThrown);
@@ -158,7 +158,7 @@ function ordenar(){
         dragClass: "drag",
 
         onChoose: function (e) {
-            console.log(e.oldIndex);
+            console.log("Posicion anterior: ", e.oldIndex);
         },
         onEnd: (e) => {
 
@@ -167,6 +167,7 @@ function ordenar(){
 //            $('#' +item.id+ ' .numero')[0].innerHTML = e.newIndex;
 //            console.log(numero_colores);
             colocar_c(numero_colores);
+            console.log("Nueva Posicion: ", e.newIndex);
         },
 
         group: "lista-backlog",
@@ -175,7 +176,7 @@ function ordenar(){
             set: (sortable) => {
                 const orden = sortable.toArray();
                 localStorage.setItem(sortable.options.group.name, orden.join('-'));
-                console.log('se guardo el orden', sortable)
+                console.log('Se guardo el orden', orden)
                 guardarOrden(orden);
             },
             //Obtener el orden sdfdf
