@@ -19,7 +19,7 @@ text = ""
 puntuacion = string.punctuation + '!¿'
 stopwords_spacy = list(STOP_WORDS)
 
-stop_words = ['cual', 'se', 'este', 'luego']
+stop_words = ['cual', 'este', 'luego']
 separadores = ("ademas", "tambien", "asimismo", "conjuntamente", "adicionalmente",
                "encima", "igualmente", "asi mismo", "por añadidura", "de la misma manera",
                "del mismo modo", "de igual forma", "por otra parte", "de la misma forma", "de igual modo",
@@ -388,7 +388,8 @@ def revisar_oraciones(doc):
         if limpiar[1].lemma_ in ("poder") and limpiar[1].pos_ in ("ADP", "AUX"):
             oracion = doc[match[0]:match[1] - 1]
         oraciones_encontradas.append(oracion)
-
+    print("ORACIONES ENCONTRADAS:")
+    print(oraciones_encontradas)
     return oraciones_encontradas
 
 
@@ -426,6 +427,15 @@ def revisar(usuario, oracion_que, oracion_para_que):
     if (len(oraciones1) == 1 and len(oraciones2) == 0):
         return None
 
+    if (len(oraciones2) > 1):
+        for index, i in enumerate(oraciones2):
+            if index > 0:
+                if oraciones2[index][0].head.text == oraciones2[index - 1][-1].text or oraciones2[index][0].head.text == \
+                        oraciones2[index - 1][0].text or oraciones2[index][0].head.text == oraciones2[index - 1][
+                    -1].head.text:
+                    oraciones2[index - 1] = doc2[oraciones2[index - 1][0].i:oraciones2[index][-1].i + 1]
+                    oraciones2.remove(i)
+
     for index, i in enumerate(oraciones1):
         if (index == len(oraciones1) - 1 and len(oraciones2) > 0):
             oraciones_encontradas.append({"usuario": usuario, "que": oraciones1[index], "para_que": oraciones2[0]})
@@ -433,14 +443,7 @@ def revisar(usuario, oracion_que, oracion_para_que):
         if (index < len(oraciones1)):
             oraciones_encontradas.append({"usuario": usuario, "que": oraciones1[index], "para_que": "sin_proposito"})
 
-    if (len(oraciones2) > 2):
-        for index, i in enumerate(oraciones2):
-            if index > 1:
-                if oraciones2[index][0].head.text == oraciones2[index - 1][-1].text or oraciones2[index][0].head.text == \
-                        oraciones2[index - 1][0].text or oraciones2[index][0].head.text == oraciones2[index - 1][
-                    -1].head.text:
-                    oraciones2[index - 1] = doc2[oraciones2[index - 1][0].i:oraciones2[index][-1].i + 1]
-                    oraciones2.remove(i)
+
 
     for index in range(len(oraciones2)):
         partes = []
@@ -516,7 +519,7 @@ def procesar(usuario, texto):
                 oraciones_sin_limpiar[index - 1] = doc[min(tokens_ids[index - 1]):max(indices) + 1]
                 continue
         oraciones_sin_limpiar.append(oracion_busqueda)
-        # print("SENTENCE:", oracion_busqueda)
+        print("SENTENCE:", oracion_busqueda)
 
 
     # Encontrar los grupos de los sustantivos relacionados
@@ -570,6 +573,7 @@ def procesar(usuario, texto):
         if not isinstance(oracion['que'], spacy.tokens.span.Span) and not isinstance(oracion['que'], spacy.tokens.doc.Doc):
             oracion['que'] = nlp(oracion['que'])
             encontrar_sustantivos(oracion['que'], patterns)
+            oracion['que'] = oracion['que'][:]
 
     resultado = 0
 
@@ -585,18 +589,16 @@ def procesar(usuario, texto):
                             oracion['grupo'] = n + 1
                             break
 
-    # print("oraciones encontradas: ", len(oraciones))
+    print("oraciones encontradas: ", len(oraciones))
 
-    for oracion in oraciones:
-        print("HISTORIA DE USUARIO: ", oracion)
 
     return oraciones
 
 usuario = "usuario"
-texto = """
-usuario Quiero crear un sistema que me permita procesar el texto hablado y convertirlo a texto plano además de esto requiero guardar el registro de la partida de ajedrez para conseguir los mejores resultado
-"""
-#
+# texto = """
+# usuario Quiero crear un sistema que me permita procesar el texto hablado y convertirlo a texto plano además de esto requiero guardar el registro de la partida de ajedrez para conseguir los mejores resultado
+# """
+# #
 # texto = """
 # como ejecutivo de cuenta quiero poder abrir una nueva cuenta de cheques a un cliente seleccionando el código de cliente y producto bancario
 #      registrar una nueva solicitud de crédito hipotecario a mi cliente
@@ -620,4 +622,8 @@ usuario Quiero crear un sistema que me permita procesar el texto hablado y conve
 # texto = """
 # consultar a los usuarios, registrar los usuarios, crear una ruta de trabajo, ir al trabajo
 # """
-# procesar(usuario, texto)
+
+texto = """
+Necesito ingresar datos de los socios de la cooperativa para facilitar el proceso de asistencia, además de registrar unidades de los socios para verificar que las unidades se encuentren en regla, también necesito ingresar la lista carreras realizadas para realizar el inventario, por otra parte, quiero ver las rutas de las unidades para saber su ubicación
+"""
+procesar(usuario, texto)

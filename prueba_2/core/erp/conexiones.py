@@ -11,20 +11,17 @@ def crearDependencia(oraciones):
     for oracion in conexiones:
         preview = oracion
         for n in (conexiones[:conexiones.index(preview)] + conexiones[conexiones.index(preview) + 1:]):
-            links.append([preview.id, n.id])
+            if preview.grupo == n.grupo:
+                links.append([preview.id, n.id])
+
 
     review = [sorted(link) for link in links]
+    nueva_review = []
+    [nueva_review.append(x) for x in review if x not in nueva_review]
 
-    for link in review:
-        preview = link
-        for n in review[:review.index(preview)] + review[review.index(preview) + 1:]:
-            if not set(n).isdisjoint(preview):
-                if preview == n:
-                    if n in review:
-                        review.remove(n)
 
     conexiones = []
-    for link in review:
+    for link in nueva_review:
         conexiones.append({'source': link[0], 'target': link[1]})
 
     return conexiones
