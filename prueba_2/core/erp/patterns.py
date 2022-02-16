@@ -757,7 +757,7 @@ pattern30 = [
         "LEFT_ID": "objeto_advcl",
         "REL_OP": ">",
         "RIGHT_ID": "objeto_obj",
-        "RIGHT_ATTRS": {"DEP": "obj"},
+        "RIGHT_ATTRS": {"DEP": {"IN": ["obj", "obl"]}},
     },
 ]
 pattern31 = [

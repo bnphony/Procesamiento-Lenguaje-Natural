@@ -166,8 +166,7 @@ def encontrar_sustantivos(doc, patterns):
     matches = matcher_sustantivos(doc)
     matches = limpiar_encontrar_sustantivos(matches, doc)
 
-    # print([match for match in matches])
-    # print([doc[min(token):max(token) + 1] for token in matches])
+
     resultado = 0
     l = matches
     l = sorted(l)
@@ -205,7 +204,7 @@ def aplicar_dependencias(doc):
     matcher_dependencia.add("VERBO_OBJ_NMOD_ACL_CCOMP", [pattern27])
     matcher_dependencia.add("VERBO_OBJ_OBL_ACL", [pattern17])
     matcher_dependencia.add("OBJ_ADVCL_CCOMP_OBJ", [pattern15])
-    matcher_dependencia.add("VERBO_OBJ_ADVCL", [pattern20])
+    matcher_dependencia.add("VERBO_OBJ_ADVCL", [pattern20]) # OBJ = ["OBJ", "OBL"]
     matcher_dependencia.add("VERBO_ADVCL_OBJ", [pattern30])
     matcher_dependencia.add("VERBO_OBJ_NMOD_ACL", [pattern44])
     matcher_dependencia.add("VERBO_CCOMP_ADVCL", [pattern21])
@@ -252,6 +251,12 @@ def aplicar_dependencias(doc):
         if nlp.vocab.strings[match_limpiar[0]] in ("VERBO_ADVCL_OBJ"):
             if (match_limpiar[1][1] - min(match_limpiar[1]) > 5):
                 matches_erroneos.append(match_limpiar)
+        if nlp.vocab.strings[match_limpiar[0]] in ("VERBO_OBJ_ADVCL"):
+            if (max(match_limpiar[1]) - min(match_limpiar[1]) > 7):
+                matches_erroneos.append(match_limpiar)
+        if nlp.vocab.strings[match_limpiar[0]] in ("CONSULTAR"):
+            if (match_limpiar[1][2] - min(match_limpiar[1]) > 7):
+                matches_erroneos.append(match_limpiar)
 
     # Se borra los matches erroneas asegurando que no se salten los valores
     for match in matches_erroneos:
@@ -265,8 +270,7 @@ def aplicar_dependencias(doc):
     for oracion in matches:
         preview = oracion
         for index, i in enumerate(matches[matches.index(preview) + 1:] + matches[:matches.index(preview)]):
-            if (not set(i[1]).isdisjoint(preview[1])) and nlp.vocab.strings[i[0]] == nlp.vocab.strings[preview[0]] and \
-                    nlp.vocab.strings[i[0]] in ("VERBO_OBJETO"):
+            if (not set(i[1]).isdisjoint(preview[1])) and nlp.vocab.strings[i[0]] == nlp.vocab.strings[preview[0]]:
                 matches.remove(i)
 
     # OJO ---------
@@ -295,12 +299,7 @@ def aplicar_dependencias(doc):
                 if oracion in tokens_ids:
                     tokens_ids.remove(oracion)
                 preview = valor
-                # if (doc[preview[0] - 1].dep_ == "mark" and index != 0):
-                #     for n, oracion in enumerate(tokens_ids):
-                #         if ((min(preview) - max(oracion)) in [0, 1, 2]):
-                #             valor = list(set(oracion + preview))
-                #             tokens_ids[tokens_ids.index(preview)] = valor
-                #             tokens_ids.remove(oracion)
+
             if (min(oracion) > min(preview) and max(oracion) < max(preview)):
                 valor = list(set(oracion + preview))
                 tokens_ids[tokens_ids.index(preview)] = valor
@@ -321,12 +320,7 @@ def aplicar_dependencias(doc):
                 if (oracion in tokens_ids):
                     tokens_ids.remove(oracion)
                 preview = valor
-                # if (doc[preview[0] - 1].dep_ == "mark" and index != 0):
-                #     for n, oracion in enumerate(tokens_ids):
-                #         if ((min(preview) - max(oracion)) in [0, 1, 2]):
-                #             valor = list(set(oracion + preview))
-                #             tokens_ids[index] = valor
-                #             tokens_ids.remove(oracion)
+
             if (min(oracion) > min(preview) and max(oracion) < max(preview)):
                 valor = list(set(oracion + preview))
                 tokens_ids[tokens_ids.index(preview)] = valor
@@ -388,8 +382,8 @@ def revisar_oraciones(doc):
         if limpiar[1].lemma_ in ("poder") and limpiar[1].pos_ in ("ADP", "AUX"):
             oracion = doc[match[0]:match[1] - 1]
         oraciones_encontradas.append(oracion)
-    print("ORACIONES ENCONTRADAS:")
-    print(oraciones_encontradas)
+    # print("ORACIONES ENCONTRADAS:")
+    # print(oraciones_encontradas)
     return oraciones_encontradas
 
 
@@ -427,14 +421,7 @@ def revisar(usuario, oracion_que, oracion_para_que):
     if (len(oraciones1) == 1 and len(oraciones2) == 0):
         return None
 
-    if (len(oraciones2) > 1):
-        for index, i in enumerate(oraciones2):
-            if index > 0:
-                if oraciones2[index][0].head.text == oraciones2[index - 1][-1].text or oraciones2[index][0].head.text == \
-                        oraciones2[index - 1][0].text or oraciones2[index][0].head.text == oraciones2[index - 1][
-                    -1].head.text:
-                    oraciones2[index - 1] = doc2[oraciones2[index - 1][0].i:oraciones2[index][-1].i + 1]
-                    oraciones2.remove(i)
+
 
     for index, i in enumerate(oraciones1):
         if (index == len(oraciones1) - 1 and len(oraciones2) > 0):
@@ -443,7 +430,14 @@ def revisar(usuario, oracion_que, oracion_para_que):
         if (index < len(oraciones1)):
             oraciones_encontradas.append({"usuario": usuario, "que": oraciones1[index], "para_que": "sin_proposito"})
 
-
+    if (len(oraciones2) > 2):
+        for index, i in enumerate(oraciones2):
+            if index > 1:
+                if oraciones2[index][0].head.text == oraciones2[index - 1][-1].text or oraciones2[index][0].head.text == \
+                        oraciones2[index - 1][0].text or oraciones2[index][0].head.text == oraciones2[index - 1][
+                    -1].head.text:
+                    oraciones2[index - 1] = doc2[oraciones2[index - 1][0].i:oraciones2[index][-1].i + 1]
+                    oraciones2.remove(i)
 
     for index in range(len(oraciones2)):
         partes = []
@@ -551,14 +545,6 @@ def procesar(usuario, texto):
     print(grupos)
 
     oraciones = []
-    # acciones = oraciones_sin_limpiar
-    # for index, i in enumerate(acciones):
-    #     if index > 0:
-    #         if acciones[index][0].head.text == acciones[index - 1][-1].text or acciones[index][0].head.text == \
-    #                 acciones[index - 1][0].text:
-    #             acciones[index - 1] = doc[acciones[index - 1][0].i:acciones[index][-1].i + 1]
-    #             acciones.remove(i)
-
     for oracion in oraciones_sin_limpiar:
         oraciones1 = pre_procesar_oraciones(usuario, oracion)
         for i in oraciones1:
@@ -593,37 +579,3 @@ def procesar(usuario, texto):
 
 
     return oraciones
-
-usuario = "usuario"
-# texto = """
-# usuario Quiero crear un sistema que me permita procesar el texto hablado y convertirlo a texto plano además de esto requiero guardar el registro de la partida de ajedrez para conseguir los mejores resultado
-# """
-# #
-# texto = """
-# como ejecutivo de cuenta quiero poder abrir una nueva cuenta de cheques a un cliente seleccionando el código de cliente y producto bancario
-#      registrar una nueva solicitud de crédito hipotecario a mi cliente
-#       indique cuales son los documentos que debo solicitar al cliente para procesar su solicitud de crédito hipotecario
-#      aprobar una solicitud de crédito hipotecario para que sea evaluada por el comité de crédito
-#      que el sistema requiera de mi aprobación para todo crédito a otorgar cuyo monto exceda los USD 10 MM
-#      poder ejecutar tu producto en todas las versiones de windows desde windows 95 en adelante
-#      que el sistema utilice la base de datos de pedidos existente en lugar de crear una nueva con la finalidad de evitar el tener que mantener una nueva base de datos
-#       que el sitio web responda a toda transacción o funcionalidad de negocio en menos de 5 segundos
-#       que el sitio web esté disponible el 99,999% de las veces que intente accederlo
-# """
-
-# texto = """
-# usuario Quiero crear un sistema que me permita procesar el texto hablado y convertirlo a texto plano además de esto requiero guardar el registro de la partida de ajedrez para conseguir los mejores resultados
-# """
-#
-# texto = """
-# Como estudiante quiero crear un sistema que convierta el audio o archivo de audio en texto, luego quiero que encuentre las historias de usuario ademas de generar el product backlog por ultimo quiero graficar las dependencias
-# """
-
-# texto = """
-# consultar a los usuarios, registrar los usuarios, crear una ruta de trabajo, ir al trabajo
-# """
-
-texto = """
-Necesito ingresar datos de los socios de la cooperativa para facilitar el proceso de asistencia, además de registrar unidades de los socios para verificar que las unidades se encuentren en regla, también necesito ingresar la lista carreras realizadas para realizar el inventario, por otra parte, quiero ver las rutas de las unidades para saber su ubicación
-"""
-procesar(usuario, texto)
