@@ -15,6 +15,8 @@ que = ""
 para_que = ""
 
 text = ""
+
+
 puntuacion = string.punctuation + '!¿'
 stopwords_spacy = list(STOP_WORDS)
 
