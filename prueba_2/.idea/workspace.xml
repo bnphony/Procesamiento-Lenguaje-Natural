@@ -19,11 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="15_02_2022_(1)">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/erp/patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/patterns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
-    </list>
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="15_02_2022_(2)Version De Presentacion" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -474,7 +470,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644962198939</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="15_02_2022_(2)Version De Presentacion">
+      <created>1644976622517</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1644976622517</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -504,7 +507,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="agregar el workspacy" />
     <MESSAGE value="actualizar el gitignore" />
     <MESSAGE value="primera version nuevos cambio" />
     <MESSAGE value="version corregida" />
@@ -529,7 +531,8 @@
     <MESSAGE value="11_02_2022_(1)" />
     <MESSAGE value="13_02_2022_(1)" />
     <MESSAGE value="15_02_2022_(1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="15_02_2022_(1)" />
+    <MESSAGE value="15_02_2022_(2)Version De Presentacion" />
+    <option name="LAST_COMMIT_MESSAGE" value="15_02_2022_(2)Version De Presentacion" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1643596534530">
