@@ -20,10 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="03_03_2022_(1)">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/es_core_news_md-3.1.0-py3-none-any.whl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,22 +52,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../mikuhatsune/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\static\lib" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\lib" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\img" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\core\erp" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\templates\pantallas" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\static\lib" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\lib" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\img" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\core" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pre_procesar">

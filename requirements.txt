@@ -1,4 +1,4 @@
-asgiref==3.4.1
+sgiref==3.4.1
 blis==0.7.5
 catalogue==2.0.6
 certifi==2021.10.8
@@ -9,7 +9,7 @@ cymem==2.0.6
 Django==3.0.8
 django-widget-tweaks==1.4.8
 es-core-news-md @
-https://github.com/explosion/spacy-models/releases/download/es_core_news_md-3.1.0/es_core_news_md-3.1.0-py3-none-any.whl
+file:///C:/Users/windows/Documents/django/Aplicaciones/Poder/procesamiento_lenguaje_natural/prueba_2/es_core_news_md-3.1.0-py3-none-any.whl
 idna==3.3
 Jinja2==3.0.3
 langcodes==3.3.0
