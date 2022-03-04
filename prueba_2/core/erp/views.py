@@ -66,7 +66,8 @@ class Prueba(FormView):
                 audio = request.FILES['subirAudio']
 
                 r = sr.Recognizer()
-                r.energy_threshold = 300
+                # r.energy_threshold = 300
+                r.dynamic_energy_threshold = True
                 with sr.AudioFile(audio) as source:
                     r.adjust_for_ambient_noise(source, duration=1)
                     # sonido = r.listen(source)

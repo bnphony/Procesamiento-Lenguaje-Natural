@@ -19,8 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="15_02_2022_(2)Version De Presentacion">
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="15_02_2022_(2)Version Corregida">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pantallas/grafico.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/grafico.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,27 +152,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635186478075</updated>
-    </task>
-    <task id="LOCAL-00001" summary="agregar el workspacy">
-      <created>1641419849458</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1641419849458</updated>
-    </task>
-    <task id="LOCAL-00002" summary="actualizar el gitignore">
-      <created>1641420238759</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1641420238759</updated>
-    </task>
-    <task id="LOCAL-00003" summary="actualizar el gitignore">
-      <created>1641420261409</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1641420261409</updated>
     </task>
     <task id="LOCAL-00004" summary="actualizar el gitignore">
       <created>1641420280679</created>
@@ -486,7 +468,35 @@
       <option name="project" value="LOCAL" />
       <updated>1644976632775</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="15_02_2022_(2)Version De Presentacion">
+      <created>1644976671890</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1644976671890</updated>
+    </task>
+    <task id="LOCAL-00050" summary="15_02_2022_(2)Version De Presentacion">
+      <created>1644976704894</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1644976704895</updated>
+    </task>
+    <task id="LOCAL-00051" summary="15_02_2022_(2)Version De Presentacion">
+      <created>1644976909289</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1644976909289</updated>
+    </task>
+    <task id="LOCAL-00052" summary="15_02_2022_(2)Version Corregida">
+      <created>1644977040234</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1644977040234</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -516,7 +526,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="actualizar el gitignore" />
     <MESSAGE value="primera version nuevos cambio" />
     <MESSAGE value="version corregida" />
     <MESSAGE value="12_01_2022_(1)" />
@@ -541,7 +550,8 @@
     <MESSAGE value="13_02_2022_(1)" />
     <MESSAGE value="15_02_2022_(1)" />
     <MESSAGE value="15_02_2022_(2)Version De Presentacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="15_02_2022_(2)Version De Presentacion" />
+    <MESSAGE value="15_02_2022_(2)Version Corregida" />
+    <option name="LAST_COMMIT_MESSAGE" value="15_02_2022_(2)Version Corregida" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1643596534530">
@@ -556,22 +566,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1644443398688" />
-    <state width="1345" height="163" key="GridCell.Tab.0.bottom" timestamp="1644964203965">
+    <state width="1345" height="163" key="GridCell.Tab.0.bottom" timestamp="1645502811641">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1644964203965" />
-    <state width="1345" height="163" key="GridCell.Tab.0.center" timestamp="1644964203965">
+    <state width="1345" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1645502811641" />
+    <state width="1345" height="163" key="GridCell.Tab.0.center" timestamp="1645502811641">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1644964203965" />
-    <state width="1345" height="163" key="GridCell.Tab.0.left" timestamp="1644964203965">
+    <state width="1345" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1645502811641" />
+    <state width="1345" height="163" key="GridCell.Tab.0.left" timestamp="1645502811640">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1644964203965" />
-    <state width="1345" height="163" key="GridCell.Tab.0.right" timestamp="1644964203965">
+    <state width="1345" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1645502811640" />
+    <state width="1345" height="163" key="GridCell.Tab.0.right" timestamp="1645502811641">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1644964203965" />
+    <state width="1345" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1645502811641" />
     <state width="1345" height="223" key="GridCell.Tab.1.bottom" timestamp="1644624879568">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -600,10 +610,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1366.728@0.0.1366.728" timestamp="1637695963563" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1644976635776">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1644977042340">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1644976635776" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1644977042340" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642090177587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

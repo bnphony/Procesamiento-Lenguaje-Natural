@@ -40,7 +40,7 @@ def text_data_cleaning(oracion):
     encontrar_separadores(doc)
     tokens = []
     for token in doc:
-        if token.lemma_ in ("quiero", "querer", "necesitar", "desear", "permitir"):
+        if token.lemma_ in ("quiero", "querer", "necesitar", "desear"): # Se quito el permitir
             aux = "."
         elif token.text in separadores:
             aux = token.text.strip().lower()
@@ -52,7 +52,7 @@ def text_data_cleaning(oracion):
     clean_tokens = []
     for token in tokens:
         if token not in stop_words and token not in puntuacion and token not in (
-                "querer", "necesitar", "desear", "permitir"):
+                "querer", "necesitar", "desear"): # Si quito el permitir
             clean_tokens.append(token)
         if token in ("$", "."):
             clean_tokens.append(token)
@@ -67,7 +67,7 @@ def text_limpio(oracion):
             aux = token.strip().lower()
             tokens.append(aux)
             continue
-        if (token.lemma_ in ("querer", "necesitar", "desear", "permitir")):
+        if (token.lemma_ in ("querer", "necesitar", "desear")): # Se quito el permitir
             aux = token.lemma_.strip().lower()
         else:
             aux = token.text.strip().lower()
@@ -76,7 +76,7 @@ def text_limpio(oracion):
     tokens_limpios = []
     for token in tokens:
         if token not in puntuacion and token not in (
-                "querer", "necesitar", "desear", "permitir") and token not in stop_words:
+                "querer", "necesitar", "desear") and token not in stop_words: # Se quito el permitir 
             tokens_limpios.append(token)
         if token in ("$"):
             tokens_limpios.append(token)
