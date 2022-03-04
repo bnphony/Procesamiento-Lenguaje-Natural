@@ -16,6 +16,17 @@ POSTGRESQL = {
     }
 }
 
+HEROKU = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ddqattk5bvmbq0',
+        'HOST': 'ec2-3-225-79-57.compute-1.amazonaws.com',
+        'USER': 'vbdjpyqxrsktel',
+        'PASSWORD': '--REPLACED_2--',
+        'PORT': 5432,
+    }
+}
+
 SQLITE = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
