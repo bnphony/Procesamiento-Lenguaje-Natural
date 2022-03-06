@@ -26,7 +26,7 @@ HEROKU = {
         'PORT': 5432,
     }
 }
-
+#Hola
 SQLITE = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
