@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="15_02_2022_(2)Version De Presentacion">
-      <change beforePath="$PROJECT_DIR$/core/erp/pre_procesar.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/pre_procesar.py" afterDir="false" />
-    </list>
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="15_02_2022_(2)Version De Presentacion" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
