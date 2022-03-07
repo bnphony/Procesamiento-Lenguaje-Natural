@@ -293,8 +293,89 @@ function imprimir(datos) {
 
 
 
+t_dependencia = 0;
+t_importancia = 0;
+function metricas(datos) {
+    data = [];
+//    let dict: {[key: number]: number} = {};
+    let microservicio = {};
+    let dependencia = {};
+    let importancia = {};
+    for (let conexion in datos[1]) {
+        if (datos[1][conexion]['source']['id'] in dependencia) {
+            ++dependencia[datos[1][conexion]['source']['id']];
+        } else {
+            dependencia[datos[1][conexion]['source']['id']] = 1;
+        }
+
+        if (datos[1][conexion]['target']['id'] in importancia) {
+            ++importancia[datos[1][conexion]['target']['id']];
+        } else {
+            importancia[datos[1][conexion]['target']['id']] = 1;
+        }
+    }
+//    console.log(dependencia);
+//    console.log(importancia);
+    sum_dependencia = 0;
+    sum_importancia = 0;
+
+    for (i = 0; i < datos[0].length; i++ ){
+        item = {}
+        microservicio[i] = 'MS' + String(i + 1);
+        if (!(datos[0][i]['id'] in dependencia)) {
+            dependencia[datos[0][i]['id']] = 0;
+        }
+        if (!(datos[0][i]['id'] in importancia)) {
+            importancia[datos[0][i]['id']] = 0;
+        }
+        item['id'] = microservicio[i];
+        item['dependencia'] = dependencia[datos[0][i]['id']];
+        item['importancia'] = importancia[datos[0][i]['id']];
+        item['interdependencia'] = 0;
+
+        sum_dependencia += Math.pow(item['dependencia'], 2);
+        sum_importancia += Math.pow(item['importancia'], 2);
+
+        data.push(item);
+    }
+    t_dependencia = Math.sqrt(sum_dependencia);
+    t_importancia = Math.sqrt(sum_importancia);
+    t = Math.sqrt(Math.pow(t_dependencia, 2) + Math.pow(t_importancia, 2) + 0);
+    console.log(t_dependencia);
+    console.log(t_importancia);
+
+    g_dependencia = document.getElementById('dependencia');
+    g_dependencia.innerHTML = t_dependencia;
+    g_importancia = document.getElementById('importancia');
+    g_importancia.innerHTML = t_importancia;
+    g = document.getElementById('t');
+    g.innerHTML = t;
 
 
+
+//    console.log(dependencia);
+//    console.log(importancia);
+//    data.append(microservicio);
+//    data.append(dependencia);
+//    data.append(importancia);
+      console.log(data);
+      console.log(data.length);
+
+    $('#data').DataTable({
+        responsive: true,
+        autoWidth: false,
+        destroy: true,
+        deferRender: true,
+        data: data,
+        columns: [
+            { data: 'id' },
+            { data: 'importancia' },
+            { data: 'dependencia' },
+            { data: 'interdependencia' }
+        ],
+
+    });
+}
 
 
 
@@ -344,7 +425,7 @@ $(function() {
         dataType: 'json',
     }).done(function(data) {
         imprimir(data);
-
+        metricas(data);
     }).fail(function(jqXHR, textStatus, errorThrown) {
         alert(textStatus + ': ' + errorThrown);
     }).always(function(data) {
@@ -360,6 +441,22 @@ $(function() {
         e.preventDefault();
         $('#myModalClient').modal('hide');
     });
+
+    $('#myModalDependencia').on('hidden.bs.modal', function(e) {
+        $('#frmDependencia').trigger('reset');
+    });
+
+    $('#frmDependencia').on('submit', function(e) {
+        e.preventDefault();
+        $('#myModalDependencia').modal('hide');
+    });
+
+    $('.btn-dependencia').on('click', function(e) {
+        $('#myModalDependencia').modal('show');
+    });
+
+
+
 })
 
 

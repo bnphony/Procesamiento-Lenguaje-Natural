@@ -122,8 +122,11 @@ function imprimir(data){
 
 
 function guardarOrden(orden) {
-//    console.log(orden);
-//    console.log(ids);
+    ids = []
+    ids1 = document.getElementsByClassName('accion');
+    for (i = 0; i < ids1.length; i++) {
+        ids[i] = ids1[i].id;
+    }
     $.ajax({
         url: window.location.pathname,
         type: 'POST',
@@ -140,7 +143,9 @@ function guardarOrden(orden) {
     }).done(function(data) {
         if(!data.hasOwnProperty('error')) {
 //            console.log('Se guardo el nuevo orden')
+
         }
+        console.log(data);
     }).fail(function(jqXHR, textStatus, errorThrown) {
         alert(textStatus + ': ' + errorThrown);
     }).always(function(data) {

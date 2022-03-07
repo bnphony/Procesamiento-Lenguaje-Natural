@@ -213,13 +213,18 @@ class Backlog(ListView):
                     data.append(item)
 
             elif action == 'orden_posicion':
+                data = []
                 print('entro al proceos de ordne')
                 orden = json.loads(request.POST['orden'])
                 ids = json.loads(request.POST['ids'])
+
+
                 for index, id in enumerate(ids):
                     accion = Accion.objects.filter(id=id).first()
-                    accion.posicion = orden[index];
+                    accion.posicion = str(index + 1)
                     accion.save()
+                data.append(orden)
+                data.append(ids)
             else:
                 data['error'] = 'Ha ocurrido un error'
         except Exception as e:
@@ -257,7 +262,7 @@ class Grafico(ListView):
             if action == 'searchdata':
                 print('Entro aqui sfdsfd dfd')
                 variable = Auxiliar.objects.all().last()
-                acciones = Accion.objects.filter(aux_id=variable.id)
+                acciones = Accion.objects.filter(aux_id=variable.id).order_by('posicion')
 
                 print('paso las acciones')
                 conexiones = crearDependencia(acciones)
