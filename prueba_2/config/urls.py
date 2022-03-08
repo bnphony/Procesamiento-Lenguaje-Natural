@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from core.erp.views import *
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
@@ -26,4 +29,4 @@ urlpatterns = [
     path('accion_1/', Accion_1.as_view(), name='accion'),
     path('backlog/', Backlog.as_view(), name='backlog'),
     path('microservicios/', Grafico.as_view(), name='microservicios'),
-]
+] +static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

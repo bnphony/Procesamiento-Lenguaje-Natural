@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="nueva_version_06_03_2022_(1)" />
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="version4_08_03_2022_(1)">
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="CommandLine" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../mikuhatsune/app" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -147,13 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635186478075</updated>
-    </task>
-    <task id="LOCAL-00003" summary="actualizar el gitignore">
-      <created>1641420261409</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1641420261409</updated>
     </task>
     <task id="LOCAL-00004" summary="actualizar el gitignore">
       <created>1641420280679</created>
@@ -491,7 +492,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646627931164</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="version4_08_03_2022_(1)">
+      <created>1646752443373</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1646752443374</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -521,7 +529,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="12_01_2022_(1)" />
     <MESSAGE value="12_01_2022_(2)" />
     <MESSAGE value="20_01_2022_(1)" />
     <MESSAGE value="20_01_2022_(2)" />
@@ -546,17 +553,18 @@
     <MESSAGE value="06_03_2022_Volver_atras(2)" />
     <MESSAGE value="Ultima_version_06_03_2022_(1)" />
     <MESSAGE value="nueva_version_06_03_2022_(1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="nueva_version_06_03_2022_(1)" />
+    <MESSAGE value="version4_08_03_2022_(1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="version4_08_03_2022_(1)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1643596534530">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1643596534530" />
-    <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1642181925288">
+    <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646753812727">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1642181925288" />
+    <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1646753812727" />
     <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1646625660933">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -601,10 +609,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1642181510714" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1646627932393">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1646752445352">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1646627932393" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1646752445352" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642090177587">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -617,9 +625,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="666" y="97" width="700" height="530" key="recent.locations.popup/0.0.1366.728@0.0.1366.728" timestamp="1643753555792" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1643684389245">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1646753399983">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1643684389245" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1646753399983" />
   </component>
 </project>
