@@ -527,7 +527,7 @@ def procesar(usuario, texto):
         if token.pos_ == "NOUN":
             for i in sustantivos[index + 1:]:
                 resultado = token.similarity(i)
-                # print(f"el sustantivo < {token} > es similar a < {i} > con < {resultado} >")
+                # print(Procfile"el sustantivo < {token} > es similar a < {i} > con < {resultado} >")
                 if (resultado > 0.75):
                     grupos.append([token, i])
                     contador += 1

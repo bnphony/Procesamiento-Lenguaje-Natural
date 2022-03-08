@@ -184,7 +184,7 @@ for match in matches:
 
 
 # for token in doc:
-# 	print(f'{token.text:{10}} {token.pos_:{7}} {token.dep_:{7}} {spacy.explain(token.dep_)}')
+# 	print(Procfile'{token.text:{10}} {token.pos_:{7}} {token.dep_:{7}} {spacy.explain(token.dep_)}')
 
 for ent in doc.ents:
     print(ent.text, ent.label_)
