@@ -22,6 +22,7 @@ pathy==0.6.1
 Pillow==8.3.1
 preshed==3.0.6
 psycopg2==2.8.6
+pyaudio==0.2.11
 pydantic==1.8.2
 pyparsing==3.0.6
 python-decouple==3.6
