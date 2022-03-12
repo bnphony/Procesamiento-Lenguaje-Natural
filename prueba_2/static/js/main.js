@@ -16,8 +16,8 @@ $(function () {
      }
 
     $('.btnVoz').on('click', function() {
-        navigator.mediaDevices.getUserMedia({ audio: true })
-            .then((stream) => {
+//        navigator.mediaDevices.getUserMedia({ audio: true })
+//            .then((stream) => {
                 var audio = document.getElementById('id_relatoUsuario');
 //                audio.innerHTML = 'Habla...'
                 var btn_x = document.getElementById('estado');
@@ -55,9 +55,9 @@ $(function () {
                     btn_x.style.color = 'black';
                 });
 
-            }).catch((err) => {
-                console.log(err);
-            });
+//            }).catch((err) => {
+//                console.log(err);
+//            });
 
     });
 
