@@ -19,11 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="Ultima_version_06_03_2022_(1)">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prueba_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prueba_2.iml" afterDir="false" />
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="Version_estable_11_03_2022_(1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635186478075</updated>
-    </task>
-    <task id="LOCAL-00002" summary="actualizar el gitignore">
-      <created>1641420238759</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1641420238759</updated>
     </task>
     <task id="LOCAL-00003" summary="actualizar el gitignore">
       <created>1641420261409</created>
@@ -496,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646627913473</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Version_estable_11_03_2022_(1)">
+      <created>1647054439711</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1647054439711</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -526,7 +524,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="version corregida" />
     <MESSAGE value="12_01_2022_(1)" />
     <MESSAGE value="12_01_2022_(2)" />
     <MESSAGE value="20_01_2022_(1)" />
@@ -551,7 +548,8 @@
     <MESSAGE value="15_02_2022_(2)Version De Presentacion" />
     <MESSAGE value="06_03_2022_Volver_atras(2)" />
     <MESSAGE value="Ultima_version_06_03_2022_(1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ultima_version_06_03_2022_(1)" />
+    <MESSAGE value="Version_estable_11_03_2022_(1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version_estable_11_03_2022_(1)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1643596534530">
@@ -606,10 +604,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1647053713331" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1646627915221">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647054441368">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1646627915221" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647054441368" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1647053352376">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

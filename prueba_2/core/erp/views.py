@@ -64,7 +64,6 @@ class Prueba(FormView):
                 print("Subir Audio sdfd")
                 form1 = self.get_form()
                 audio = request.FILES['subirAudio']
-
                 r = sr.Recognizer()
                 r.energy_threshold = 300
                 with sr.AudioFile(audio) as source:
