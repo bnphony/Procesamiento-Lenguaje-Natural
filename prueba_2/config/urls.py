@@ -19,9 +19,9 @@ from core.erp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', IndexView.as_view(), name='index'),
-    path('bienvenido/', PantallaHola.as_view(), name='bienvenido'),
-    path('prueba/', Prueba.as_view(), name='prueba'),
+    # path('', IndexView.as_view(), name='index'),
+    # path('bienvenido/', PantallaHola.as_view(), name='bienvenido'),
+    path('', Prueba.as_view(), name='prueba'),
     path('accion/', Acciones.as_view(), name='acciones'),
     path('accion_1/', Accion_1.as_view(), name='accion'),
     path('backlog/', Backlog.as_view(), name='backlog'),

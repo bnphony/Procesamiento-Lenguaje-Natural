@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="Ultima_version_06_03_2022_(1)">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prueba_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prueba_2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pantallas/grafico.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/grafico.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -560,10 +562,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1642181925288" />
-    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1646625660933">
+    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1647053685764">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1646625660933" />
+    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1647053685764" />
     <state width="1345" height="163" key="GridCell.Tab.0.bottom" timestamp="1646607955896">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -600,18 +602,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="327" y="66" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1642090174061" />
-    <state x="184" y="9" key="SettingsEditor" timestamp="1642181510714">
+    <state x="184" y="9" key="SettingsEditor" timestamp="1647053713331">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1642181510714" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1647053713331" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1646627915221">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1646627915221" />
-    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1642090177587">
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1647053352376">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1642090177587" />
+    <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1647053352376" />
     <state x="667" y="0" width="585" height="728" key="find.popup" timestamp="1638829250643">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
