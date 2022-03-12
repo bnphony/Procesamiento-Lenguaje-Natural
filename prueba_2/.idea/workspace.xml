@@ -50,22 +50,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="CommandLine" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../mikuhatsune/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\static\lib" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\lib" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\img" />
+      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\core\erp" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\templates\pantallas" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2" />
       <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\procesamiento_lenguaje_natural\prueba_2\static\lib" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\lib" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\static\img" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2" />
-      <recent name="C:\Users\windows\Documents\django\Aplicaciones\Poder\prueba_2\core" />
     </key>
   </component>
   <component name="RunManager" selected="Python.pre_procesar">
@@ -556,14 +556,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1643596534530" />
-    <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646763041218">
+    <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646766708370">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1646763041218" />
-    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1646625660933">
+    <state x="431" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1646766708370" />
+    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1646792858360">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1646625660933" />
+    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1646792858360" />
     <state width="1345" height="163" key="GridCell.Tab.0.bottom" timestamp="1646607955896">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -600,10 +600,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="327" y="66" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1642090174061" />
-    <state x="184" y="9" key="SettingsEditor" timestamp="1642181510714">
+    <state x="184" y="9" key="SettingsEditor" timestamp="1646885581788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1642181510714" />
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1646885581788" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1646765090766">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
