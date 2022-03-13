@@ -64,6 +64,8 @@ class Prueba(FormView):
                 print("Subir Audio sdfd")
                 form1 = self.get_form()
                 audio = request.FILES['subirAudio']
+                print(type(audio))
+                print(audio)
                 r = sr.Recognizer()
                 r.energy_threshold = 300
                 with sr.AudioFile(audio) as source:
@@ -108,6 +110,26 @@ class Prueba(FormView):
                     nuevo.save()
 
                 data['url'] = reverse_lazy('accion')
+            elif action == 'audio':
+                print("Subir Audio")
+
+                # form1 = self.get_form()
+                audio = request.FILES['audio']
+                print(type(audio))
+                print(audio)
+                r = sr.Recognizer()
+                r.energy_threshold = 300
+                with sr.AudioFile(audio) as source:
+                    r.adjust_for_ambient_noise(source, duration=1)
+                    # sonido = r.listen(source)
+                    sonido = r.record(source)
+                    try:
+                        print('Reading the audio')
+                        text = r.recognize_google(sonido, language='es-ES')
+                        print(text)
+                    except:
+                        print('Losiento no se puede entender...')
+                data['audio'] = text
 
             else:
                 data['error'] = "No ha ingresado a ninguna opcion"

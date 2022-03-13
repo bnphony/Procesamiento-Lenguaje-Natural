@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block head %}
-<!--<link rel="stylesheet" href="{% static 'css/grabacion.css' %}">-->
+<!-- Libreria para la grabacion y descarga -->
+<link rel="stylesheet" href="{% static 'css/grabacion.css' %}">
 
 
 <link rel="canonical" href="https://markjivko.com/tutorials/B3wWIsNHPk4/">
@@ -16,8 +17,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <!-- Librerias para la grabacion de audio -->
-<!--<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>-->
-<!--<script src="https://markjivko.com/dist/recorder.js"></script>-->
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+<script src="https://markjivko.com/dist/recorder.js"></script>
 
 <!-- Libreria principal -->
     <script src="{% static 'js/main.js' %}"></script>
@@ -117,12 +118,7 @@
 
 
 
-<!--            <div class="holder">-->
-<!--                <div data-role="controls">-->
-<!--                    <button type="button">Record</button>-->
-<!--                </div>-->
-<!--                <div data-role="recordings"></div>-->
-<!--            </div>-->
+
 
 
 
@@ -148,8 +144,18 @@
 <!--        <button type="button" id="iniciarGrabacion" class="btn btn-info">Iniciar Grabacion</button>-->
 <!--        <button type="button" id="pararGrabacion" class="btn btn-danger">Parar Grabacion</button>-->
 
+        <div class="holder">
+            <div data-role="controls">
+                    <button type="button">Record</button>
+            </div>
+            <div data-role="recordings"></div>
+
+        </div>
+        <input type="file" id="subirVoz" name="subirVoz" accept=".wav">
 
     </form>
+
+
 
 
 </div>

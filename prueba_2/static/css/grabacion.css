@@ -1,3 +1,4 @@
+/*
 body {
     position: absolute;
     display: -webkit-box;
@@ -16,6 +17,8 @@ body {
     width: 100%;
     margin: 0;
 }
+
+*/
 .holder {
     background-color: #4c474c;
     background-image: -webkit-gradient(linear, left bottom, left top, from(#4c474c), to(#141414));
