@@ -40,7 +40,6 @@ jQuery(document).ready(function () {
             var lista = document.querySelector("#listaDeDispositivos");
             contador = 3;
 
-
             var options = {audio: { deviceId: lista.value }, video: false};
             navigator.mediaDevices.getUserMedia(options).then(function (stream) {
                 a_id = setInterval(cont, 300);
@@ -71,47 +70,12 @@ jQuery(document).ready(function () {
                         var url = (window.URL || window.webkitURL)
                                 .createObjectURL(blob);
                         grabadora_estado.innerHTML = 'Estado';
-//                        audio = new Audio(url);
-//                        audio.play();
-//                        console.log("TIPO luego sss:", typeof(audio));
 
-
-                        // Prepare the playback
-//                        var audioObject = $('<audio controls></audio>')
-//                                .attr('src', url);
                         var file = new Blob([blob], {type: "audio/wav"});
-//                        console.log(typeof(file));
-//                        console.log(file);
-//                        if (window.navigator.msSaveOrOpenBlob) {
-//                            window.navigator.msSaveOrOpenBlob(file, file_name);
-//                            console.log('entro en el primero');
-//                        } else {
-//                            console.log('entro en el segundo');
-//                            var a = document.createElement("a");
-//                            var url = URL.createObjectURL(file);
-//                            a.href = url;
-//                            a.download = 'audio.wav';
-//                            document.body.appendChild(a);
-//                            a.click();
-//                            setTimeout(function() {
-//                                document.body.removeChild(a);
-//                                window.URL.revokeObjectURL(url);
-//                            }, 0);
-//                        }
+
                         convertirAudio(file);
 
-                        // Prepare the download link
-//                        var downloadObject = $('<a>&#9660;</a>')
-//                                .attr('href', url)
-//                                .attr('download', new Date().toUTCString() + '.wav');
-//
-//                        // Wrap everything in a row
-//                        var holderObject = $('<div class="row"></div>')
-//                                .append(audioObject)
-//                                .append(downloadObject);
 
-                        // Append to the list
-//                        listObject.append(holderObject);
                     });
                 }
             }
@@ -220,68 +184,3 @@ function convertirAudio(audio1) {
 }
 
 
-
-
-
-//    const btnStartRecord = document.getElementById('btnStartRecord');
-//    const btnStopRecord = document.getElementById('btnStopRecord');
-//    var texto = document.getElementById('id_relatoUsuario')
-//    const btnPlayText = document.getElementById('playText');
-//
-//    window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition
-//    window.SpeechGrammarList = window.SpeechGrammarList || window.webkitSpeechGrammarList
-//    window.SpeechRecognitionEvent = window.SpeechRecognitionEvent || window.webkitSpeechRecognitionEvent
-//
-//    const grammar = '#JSGF V1.0; grammar palabras; public <palabra> = pre;';
-//    let recognition = new webkitSpeechRecognition || new SpeechRecognition();
-//    var speechRecognitionList = new SpeechGrammarList();
-//    speechRecognitionList.addFromString(grammar, 1);
-//    recognition.grammars = speechRecognitionList;
-//    recognition.lang = 'es-ES';
-//    recognition.continuous = true;
-//    recognition.interimResults = false;
-//
-//    recognition.onresult = (event) => {
-//        const results = event.results;
-//        const frase = results[results.length - 1][0].transcript;
-//        texto.value += frase;
-//        console.log(frase);
-//        console.log(results[0][0].confidence)
-//    }
-//
-//    recognition.onend = (event) => {
-//        console.log('El microfono deja de escuchar');
-//    }
-//
-//    recognition.onerror = (event) => {
-//        console.log(event.error);
-//    }
-//
-//    btnStartRecord.addEventListener('click', () => {
-//        recognition.start();
-//        btnStartRecord.disabled = true;
-//        //btnStopRecord.disabled = false;
-//    });
-//
-//    btnStopRecord.addEventListener('click', () => {
-////        recognition.abort();
-//        recognition.stop();
-//        btnStartRecord.disabled = false;
-//        //btnStopRecord.disabled = true;
-//    });
-
-
-//    btnPlayText.addEventListener('click', () => {
-//        leerTexto(texto.value);
-//    });
-
-
-//    function leerTexto(texto){
-//        const speech = new SpeechSynthesisUtterance();
-//        speech.text = texto;
-//        speech.volume = 1;
-//        speech.rate = 1;
-//        speech.pitch = 1;
-//
-//        window.speechSynthesis.speak(speech);
-//    }
