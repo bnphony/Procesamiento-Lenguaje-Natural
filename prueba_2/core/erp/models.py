@@ -40,7 +40,7 @@ class Auxiliar(models.Model):
 
 class Accion(models.Model):
     actor = models.CharField(max_length=300, verbose_name='Actor', default='actor')
-    que = models.CharField(max_length=1000, verbose_name='Que' default='que')
+    que = models.CharField(max_length=1000, verbose_name='Que', default='que')
     para_que = models.CharField(max_length=1000, verbose_name='Para_que', default='para_que')
     posicion = models.PositiveIntegerField(default=0)
     grupo = models.PositiveIntegerField(default=0)
