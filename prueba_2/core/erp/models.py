@@ -21,7 +21,7 @@ class User_story(models.Model):
 
 
 class Auxiliar(models.Model):
-    relatoUsuario = models.CharField(max_length=10000, verbose_name='Historia')
+    relatoUsuario = models.CharField(max_length=10000, verbose_name='Historia', default='problema')
 
     def __str__(self):
         return '{}'.format('Historia')
@@ -39,12 +39,12 @@ class Auxiliar(models.Model):
 
 
 class Accion(models.Model):
-    actor = models.CharField(max_length=300, verbose_name='Actor')
-    que = models.CharField(max_length=1000, verbose_name='Que')
-    para_que = models.CharField(max_length=1000, verbose_name='Para_que')
-    posicion = models.PositiveIntegerField()
-    grupo = models.PositiveIntegerField()
-    nombre = models.CharField(max_length=100, verbose_name='Nombre')
+    actor = models.CharField(max_length=300, verbose_name='Actor', default='actor')
+    que = models.CharField(max_length=1000, verbose_name='Que' default='que')
+    para_que = models.CharField(max_length=1000, verbose_name='Para_que', default='para_que')
+    posicion = models.PositiveIntegerField(default=0)
+    grupo = models.PositiveIntegerField(default=0)
+    nombre = models.CharField(max_length=100, verbose_name='Nombre', default='nombre')
     aux = models.ForeignKey(Auxiliar, on_delete=models.CASCADE, verbose_name='Auxiliar')
 
     def __str__(self):
