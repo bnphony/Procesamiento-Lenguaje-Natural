@@ -1,8 +1,27 @@
+
+
 jQuery(document).ready(function () {
+    init();
     var subirVoz = document.getElementById('subirVoz');
-    var audio = new Audio();
+    var grabadora_estado = document.getElementById('estado_grabadora');
+    var a_id = null;
+    let contador = 3;
+
+    var cont = function() {
+        if (contador > 0) {
+            grabadora_estado.innerHTML = contador;
+            contador--;
+        } else {
+            grabadora_estado.innerHTML = 'Grabando...';
+            grabadora_estado.style.color = 'green';
+            clearInterval(a_id);
+        }
+     }
+
     var $ = jQuery;
+
     var myRecorder = {
+
         objects: {
             context: null,
             stream: null,
@@ -14,17 +33,26 @@ jQuery(document).ready(function () {
                     window.AudioContext || window.webkitAudioContext
                 );
             }
+
+
         },
         start: function () {
-            var options = {audio: true, video: false};
+            var lista = document.querySelector("#listaDeDispositivos");
+            contador = 3;
+
+
+            var options = {audio: { deviceId: lista.value }, video: false};
             navigator.mediaDevices.getUserMedia(options).then(function (stream) {
+                a_id = setInterval(cont, 300);
                 myRecorder.objects.stream = stream;
                 myRecorder.objects.recorder = new Recorder(
                         myRecorder.objects.context.createMediaStreamSource(stream),
                         {numChannels: 1}
                 );
                 myRecorder.objects.recorder.record();
-            }).catch(function (err) {});
+            }).catch(function (err) {
+                alert("Debe dar permiso para utilizar el micrófono");
+            });
         },
         stop: function (listObject) {
 
@@ -42,18 +70,18 @@ jQuery(document).ready(function () {
                     myRecorder.objects.recorder.exportWAV(function (blob) {
                         var url = (window.URL || window.webkitURL)
                                 .createObjectURL(blob);
-
-                        audio = new Audio(url);
+                        grabadora_estado.innerHTML = 'Estado';
+//                        audio = new Audio(url);
 //                        audio.play();
-                        console.log("TIPO luego sss:", typeof(audio));
+//                        console.log("TIPO luego sss:", typeof(audio));
 
 
                         // Prepare the playback
-                        var audioObject = $('<audio controls></audio>')
-                                .attr('src', url);
+//                        var audioObject = $('<audio controls></audio>')
+//                                .attr('src', url);
                         var file = new Blob([blob], {type: "audio/wav"});
-                        console.log(typeof(file));
-                        console.log(file);
+//                        console.log(typeof(file));
+//                        console.log(file);
 //                        if (window.navigator.msSaveOrOpenBlob) {
 //                            window.navigator.msSaveOrOpenBlob(file, file_name);
 //                            console.log('entro en el primero');
@@ -73,22 +101,20 @@ jQuery(document).ready(function () {
                         convertirAudio(file);
 
                         // Prepare the download link
-                        var downloadObject = $('<a>&#9660;</a>')
-                                .attr('href', url)
-                                .attr('download', new Date().toUTCString() + '.wav');
-
-                        // Wrap everything in a row
-                        var holderObject = $('<div class="row"></div>')
-                                .append(audioObject)
-                                .append(downloadObject);
+//                        var downloadObject = $('<a>&#9660;</a>')
+//                                .attr('href', url)
+//                                .attr('download', new Date().toUTCString() + '.wav');
+//
+//                        // Wrap everything in a row
+//                        var holderObject = $('<div class="row"></div>')
+//                                .append(audioObject)
+//                                .append(downloadObject);
 
                         // Append to the list
-                        listObject.append(holderObject);
+//                        listObject.append(holderObject);
                     });
                 }
             }
-
-            return audio;
         }
     };
 
@@ -102,32 +128,77 @@ jQuery(document).ready(function () {
         // Initialize the recorder
         myRecorder.init();
 
+
         // Get the button state
         var buttonState = !!$(this).attr('data-recording');
 
         // Toggle
         if (!buttonState) {
-            $(this).attr('data-recording', 'true');
             myRecorder.start();
+            $(this).attr('data-recording', 'true');
+
         } else {
+            myRecorder.stop(listObject);
             $(this).attr('data-recording', '');
-            audio1 = myRecorder.stop(listObject);
-            audio1.play();
-//            convertirAudio(audio1);
+
+
         }
     });
 
-
 });
 
+function iniciarContador() {
+
+}
+
+
+const init = () => {
+    const tieneSoporteUserMedia = () =>
+    !!(navigator.mediaDevices.getUserMedia)
+
+    if (typeof MediaRecorder === "undefined" || !tieneSoporteUserMedia()) {
+        return alert("Su navegador web no cumple los requisitos; Utilize otro navegador, por favor!");
+    }
+
+    const $listaDeDispositivos = document.querySelector("#listaDeDispositivos");
+
+    const limpiarSelect = () => {
+        for (let x = $listaDeDispositivos.options.length - 1; x >= 0; x--) {
+            $listaDeDispositivos.options.remove(x);
+        }
+    };
+
+    const llenarLista = () => {
+        navigator.mediaDevices
+            .enumerateDevices()
+            .then(dispositivos => {
+                limpiarSelect();
+                dispositivos.forEach((dispositivo, indice) => {
+                    if (dispositivo.kind === "audioinput") {
+                        console.log('Tiene dispositivo');
+                        const $opcion = document.createElement("option");
+                        $opcion.text = dispositivo.label  || `Dispositivo ${indice + 1}`;
+                        $opcion.value = dispositivo.deviceId;
+                        $listaDeDispositivos.appendChild($opcion);
+                    }
+                })
+            })
+    };
+    llenarLista();
+    console.log("se cargo el init()")
+}
+
+
 function convertirAudio(audio1) {
+
+    var x = document.getElementById('id_relatoUsuario');
     var data = new FormData();
     data.append("audio", audio1)
     data.append("action", 'audio');
-    console.log('TIPO: ', typeof(data.get("audio")));
+//    console.log('TIPO: ', typeof(data.get("audio")));
 
 //    console.log(data.get("action"));
-    console.log('CONTENIDO: ', data.get("audio"));
+//    console.log('CONTENIDO: ', data.get("audio"));
     $.ajax({
         url: window.location.pathname,
         type: 'POST',
@@ -138,7 +209,7 @@ function convertirAudio(audio1) {
         cache: false,
     }).done(function (data) {
         if(!data.hasOwnProperty('error')){
-//           window.location.href = data['url'];
+           x.value += data['audio'];
         }
         console.log(data);
     }).fail(function (jqYHR, textStatus, errorThrown) {

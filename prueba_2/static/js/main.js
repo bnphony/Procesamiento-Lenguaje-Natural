@@ -1,5 +1,4 @@
 $(function () {
-
     const estado = document.getElementById('estado');
     var a_id = null;
     let contador = 3;

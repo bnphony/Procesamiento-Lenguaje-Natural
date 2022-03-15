@@ -17,7 +17,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <!-- Librerias para la grabacion de audio -->
-<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+<!--<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>-->
 <script src="https://markjivko.com/dist/recorder.js"></script>
 
 <!-- Libreria principal -->
@@ -78,12 +78,14 @@
         </div>
 
 
+
         <div class="estado_">
             <button id="btn_limpiar" class="btn btn-danger" type="button">
                 Limpiar
             </button>
             <p class="estado" id="estado">Estado</p>
         </div>
+
 
         <div class="form-group">
             <p style="background-color: green; color: white; margin-top: 10px; width: 50%; border-radius: 5px;">
@@ -104,6 +106,23 @@
                 Ingresar con voz
             </button>
             <br>
+            <br>
+              <div>
+                <select name="listaDeDispositivos" id="listaDeDispositivos"></select>
+                <br><br>
+            </div>
+            <div class="grabadora">
+                <div class="holder">
+                    <div data-role="controls">
+                        <button type="button">Record</button>
+                    </div>
+                    <div data-role="recordings"></div>
+                </div>
+                <div class="estado_g"><p class="estado_grabadora" id="estado_grabadora">Estado</p></div>
+            </div>
+
+
+
             <p style="background-color: green; color: white; margin-top: 10px; width: 50%; border-radius: 5px;">
                 &nbsp Subir un archivo de texto formato txt
             </p>
@@ -144,14 +163,8 @@
 <!--        <button type="button" id="iniciarGrabacion" class="btn btn-info">Iniciar Grabacion</button>-->
 <!--        <button type="button" id="pararGrabacion" class="btn btn-danger">Parar Grabacion</button>-->
 
-        <div class="holder">
-            <div data-role="controls">
-                    <button type="button">Record</button>
-            </div>
-            <div data-role="recordings"></div>
 
-        </div>
-        <input type="file" id="subirVoz" name="subirVoz" accept=".wav">
+
 
     </form>
 
