@@ -1,64 +1,6 @@
 $(function () {
-    const estado = document.getElementById('estado');
-    var a_id = null;
-    let contador = 3;
-
-     var cont = function() {
-        if (contador > 0) {
-            estado.innerHTML = contador;
-            contador--;
-        } else {
-            estado.innerHTML = 'Habla...';
-            estado.style.color = 'green';
-            clearInterval(a_id);
-        }
-     }
-
-    $('.btnVoz').on('click', function() {
-//        navigator.mediaDevices.getUserMedia({ audio: true })
-//            .then((stream) => {
-                var audio = document.getElementById('id_relatoUsuario');
-//                audio.innerHTML = 'Habla...'
-                var btn_x = document.getElementById('estado');
-
-//                btn_x.innerHTML = 'Habla...';
-                contador = 3;
-
-                a_id = setInterval(cont, 300);
 
 
-                var btn = document.getElementById('btnVoz');
-                btn.innerHTML = 'Grabando';
-
-                $.ajax({
-                    url: window.location.pathname,
-                    type: 'POST',
-                    data: {
-                        "action": 'voz',
-                    },
-                    dataType: 'json',
-                }).done(function (data) {
-                    if(!data.hasOwnProperty('error')){
-//                        btn.className = 'btn btn-danger btnVoz';
-                        btn.innerHTML = 'Ingreso por Voz';
-                        audio.value += data['voz'] + ' ';
-//                        btn_x.innerHTML = 'Estado';
-                    }
-
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    alert(textStatus + ': ' + errorThrown);
-
-                }).always(function (data) {
-                    btn.innerHTML = 'Ingreso por Voz';
-                    btn_x.innerHTML = 'Estado';
-                    btn_x.style.color = 'black';
-                });
-
-//            }).catch((err) => {
-//                console.log(err);
-//            });
-
-    });
 
     $('.btnTxt').on('click', function() {
         console.log('Subir un Archivo');

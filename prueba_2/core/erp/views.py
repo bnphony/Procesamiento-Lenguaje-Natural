@@ -79,23 +79,6 @@ class Prueba(FormView):
                     except:
                         print('Losiento no se puede entender...')
                 data['audio'] = text
-            elif action == 'voz':
-                r = sr.Recognizer()                
-                r.dynamic_energy_threshold = True                
-                r.operation_timeout = 5
-                with sr.Microphone() as source:
-                    print('Habla .....')
-                    r.adjust_for_ambient_noise(source, duration=1)
-                    audio = r.listen(source, timeout=5)
-                    try:
-                        text = r.recognize_google(audio, language='es-ES')
-                        print(text)
-                    except:
-                        print("Perdon, pero no entiendo")
-                        data['error'] = 'No se entiende'
-                data['voz'] = text
-
-                
             elif action == 'pre_procesar':
 
                 usuario = request.POST['nombreUsuario']
