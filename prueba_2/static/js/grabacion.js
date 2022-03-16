@@ -50,7 +50,9 @@ jQuery(document).ready(function () {
                 );
                 myRecorder.objects.recorder.record();
             }).catch(function (err) {
+//                var p = navigator.mediaDevices.getUserMedia(options);
                 alert("Debe dar permiso para utilizar el micrófono");
+
             });
         },
         stop: function (listObject) {
@@ -173,7 +175,7 @@ function convertirAudio(audio1) {
         cache: false,
     }).done(function (data) {
         if(!data.hasOwnProperty('error')){
-           x.value += data['audio'];
+           x.value += data['audio'] + ' ';
         }
         console.log(data);
     }).fail(function (jqYHR, textStatus, errorThrown) {
