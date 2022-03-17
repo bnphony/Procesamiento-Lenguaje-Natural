@@ -19,7 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="version6_subida_16_03_2022_(1)" />
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="version6_subida_16_03_2022_(1)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/erp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/erp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/accion_1.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/accion_1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pantallas/acciones_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/acciones_1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pantallas/backlog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/backlog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pantallas/historia.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pantallas/historia.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -601,10 +610,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1647053713331" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647394927175">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647442130842">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647394927175" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647442130842" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1647053352376">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -99,7 +99,7 @@ function ordenar(){
                 $('#' + item.id + ' .eliminar').one('click', function() {
                     contador += 1;
                     console.log(contador);
-                    alert_action('Notificacion', 'Esta seguro de eliminar esta Historia de Usuario?', function() {
+                    alert_action('Notificación', '¿Esta seguro de eliminar esta Historia de Usuario?', function() {
                         eliminarElemento(item.id);
                         item.parentNode.removeChild(item);
                         enumerar();

@@ -242,7 +242,7 @@ class Backlog(ListView):
         context['sub_title'] = 'Product Backlog'
         context['acciones_url'] = reverse_lazy('accion')
         context['ingreso_url'] = reverse_lazy('prueba')
-        context['entity'] = 'Producto Backlog'
+        context['entity'] = 'Product Backlog'
         context['mensaje'] = 'Historias de Usuario'
         context['grafico'] = reverse_lazy('microservicios')
         context['url'] = 'opciones'
@@ -307,7 +307,7 @@ class Grafico(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Microservicios'
-        context['sub_title'] = 'Grafico de los Microservicios Encontrados'
+        context['sub_title'] = 'Gráfico de los Microservicios Encontrados'
         context['backlog_url'] = reverse_lazy('backlog')
         context['ingreso_url'] = reverse_lazy('prueba')
         context['entity'] = 'Microservicios'
