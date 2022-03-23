@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="version6_subida_17_03_2022_(1)">
+    <list default="true" id="22576b48-799b-429e-aa83-6249f01dd6b1" name="Default Changelist" comment="version6_subida_19_03_2022_(1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
     </list>
@@ -150,13 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635186478075</updated>
-    </task>
-    <task id="LOCAL-00009" summary="12_01_2022_(1)">
-      <created>1642008896969</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1642008896969</updated>
     </task>
     <task id="LOCAL-00010" summary="12_01_2022_(2)">
       <created>1642043393705</created>
@@ -494,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647528817348</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="version6_subida_19_03_2022_(1)">
+      <created>1647714023140</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1647714023140</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -524,7 +524,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="20_01_2022_(4)" />
     <MESSAGE value="20_01_2022_(5)" />
     <MESSAGE value="30_01_2022_(1)" />
     <MESSAGE value="31_01_2022_(1)" />
@@ -549,7 +548,8 @@
     <MESSAGE value="version6_subida_15_03_2022_(1)" />
     <MESSAGE value="version6_subida_16_03_2022_(1)" />
     <MESSAGE value="version6_subida_17_03_2022_(1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="version6_subida_17_03_2022_(1)" />
+    <MESSAGE value="version6_subida_19_03_2022_(1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="version6_subida_19_03_2022_(1)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="568" y="227" key="#Notifications" timestamp="1643596534530">
@@ -604,10 +604,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1647053713331" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647528818669">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1647714024900">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647528818669" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1647714024900" />
     <state x="492" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1647053352376">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
