@@ -295,7 +295,7 @@ class Grafico(ListView):
 
                 data.append(nodes)
                 data.append(links)
-
+                print(data)
             else:
                 data['error'] = 'Ha ocurrido un error'
         except Exception as e:

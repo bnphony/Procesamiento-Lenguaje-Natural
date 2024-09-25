@@ -19,7 +19,6 @@ const x = d3.scaleBand()
 const y = d3.scaleLinear()
     .range([height, 0]);
 
-
 var padding = 20;
 var columnas = 4;
 
@@ -29,6 +28,7 @@ var columnas = 4;
 
 function imprimir(datos) {
     x.domain(datos[0].map((d) => d.id));
+
     y.domain([0, d3.max(datos[0], d => d.usuario) + 7]);
 
     var data = []
