@@ -114,7 +114,7 @@ Cualquier usuario puede acceder a las funcionalidades del sistema.
       <div align="center">
         <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/opciones_ingreso.PNG" width="80%" alt="Input Options">
         <p>
-          - Formas de ingresar el relato del usuario: 1) Caja de Texto, 2) Utilizar el micrófono para grabar la voz del usuario, 3) Subir un archivo de texto, 4) Subir un archivo de audio (.mp3).
+          - Formas de ingresar el relato del usuario: 1) Caja de Texto, 2) Utilizar el micrófono para grabar la voz del usuario, 3) Subir un archivo de texto, 4) Subir un archivo de audio (.wav).
         </p>
       </div>
     </td>
