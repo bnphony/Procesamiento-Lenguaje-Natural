@@ -20,7 +20,7 @@ pathy==0.6.1
 Pillow==8.3.1
 preshed==3.0.6
 psycopg2==2.8.6
-PyAudio @ file:///C:/Users/windows/Documents/django/Aplicaciones/Poder/procesamiento_lenguaje_natural/prueba_2/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
+PyAudio @ file:///D:/ProProyectos/DJANGO/Poder/PLN/prueba_2/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
 pydantic==1.8.2
 pyparsing==3.0.6
 pytz==2021.3

@@ -1,3 +1,5 @@
+// TODO: JS de historia.html la pantalla principal
+
 $(function () {
 
     const estado = document.getElementById('estado');
@@ -111,6 +113,7 @@ $(function () {
         data.append("action", 'pre_procesar');
         console.log(data.get("relatoUsuario"));
         console.log(data.get("nombreUsuario"));
+
         $.ajax({
             url: window.location.pathname,
             type: 'POST',
