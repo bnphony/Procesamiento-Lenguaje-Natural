@@ -36,7 +36,8 @@
   - [Licencia de Uso](#licencia-de-uso)
  
 ## Descripción
-Sistema de Inventarios y generación de reportes, utilizando DJANGO 3.0. Funciones Principales:
+Prototipo para generar micro servicios a travez de un relato de usuario utilizando el Procesamiento del Lenguaje Natural. Funciones Principales:
+- Ingresar un relato de usuario utilizando, una caja de texto, subir un archivo de text .txt, reconocimiento de voz.
 - Gestionar Usuarios.
 - Gestionar Categorías.
 - Gestionar Productos.
