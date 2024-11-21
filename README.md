@@ -155,7 +155,7 @@ Cualquier usuario puede acceder a las funcionalidades del sistema.
           - Mostrar los posibles Micro servicios y su dependencia encontrados por el sistema en base al relato del usuario.
         </p>
         <br/>
-        <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/opciones_relato.PNG" width="80%" alt="UH Information">
+        <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/info_hu.PNG" width="60%" alt="UH Information">
         <p>
           - Al hacer click sobre una Historia de Usuario(nodo), se abre un cuadro de diálogo con su nombre, descripción y dependencias. <br/>
           - Para una mejor visualización de las conexiones(links) los nodos pueden ser arrastrados momentaneamente.
