@@ -10,11 +10,11 @@
   ![GitHub](https://img.shields.io/github/last-commit/bnphony/Sistema-Inventario)
   [![Django](https://img.shields.io/badge/Framework-Django-green)](https://www.djangoproject.com/)
   [![Python](https://img.shields.io/badge/Code-Python-fd81f)](https://www.python.org/)
-  [![DataTables](https://img.shields.io/badge/Tables-DataTables-397ed3)](https://datatables.net/)
-  [![Bootstrap 5](https://img.shields.io/badge/Framework-Bootstrap%205-7952b3)](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+  [![D3js](https://img.shields.io/badge/Code-D3js-cc6d0e)](https://d3js.org/)
   [![PostgreSQL](https://img.shields.io/badge/DB-PostgreSQL-6598c3)](https://www.postgresql.org/)
+  [![DataTables](https://img.shields.io/badge/Tables-DataTables-397ed3)](https://datatables.net/)
   [![JavaScript](https://img.shields.io/badge/Code-JavaSript-orange)](https://developer.mozilla.org/es/docs/Web/JavaScript)
-  [![JQuery](https://img.shields.io/badge/Code-JQuery-0769ad)](https://jquery.com/)  
+  [![JQuery](https://img.shields.io/badge/Code-JQuery-0769ad)](https://jquery.com/) 
 
 </div>
 
@@ -36,108 +36,65 @@
   - [Licencia de Uso](#licencia-de-uso)
  
 ## Descripción
-Sistema de Inventarios y generación de reportes, utilizando DJANGO 3.0. Funciones Principales:
-- Gestionar Usuarios.
-- Gestionar Categorías.
-- Gestionar Productos.
-- Gestionar Clientes.
-- Gestionar Ventas.
-- Generar reportes de ventas.
-- Exportar en formato Excel y PDF los reportes de ventas.
-- Visualizar el porcentaje de ventas utilizando gráficos de barras y de sectores (pastel).
-
+Prototipo para generar micro servicios a travez de un relato de usuario utilizando el Procesamiento del Lenguaje Natural. Funciones Principales:
+- Ingresar un relato de usuario utilizando, una caja de texto, subir un archivo de text, reconocimiento de voz(voz a texto).
+- Encontrar las acciones del relato del usuario.
+- Transformar las acciones en Historias de Usuario.
+- Agrupar las Historias de Usuario relacionadas para crear un microservicio.
+- Calcular la posible dependencia que existe entre los microservicios.
+- Cada Historia de Usuario se representa como un nodo y cada microservicio como una caja de las continiene, las historias de usuario relacionadas se conectan mediante links.
    
 ### Tecnologías
 
 - Lenguaje del lado del Servidor: [Python](https://www.python.org/) - Interactuar con la base de datos, gestionar las peticiones del usuario.
 - Web Framework: [Django](https://www.djangoproject.com/) - Facilitar el desarrollo web.
+- Visualización de Información: [D3js](https://d3js.org/) - Graficar, agrupar y presentar la posible dependencia que existe entre los micoservicios.
+- Base de Datos: [PostgreSQL](https://www.postgresql.org/) - Almacenar el relato del usuario, las historias de usuario y las acciones.
 - Interacción con la Interfaz: [Java](https://www.java.com/es/) y [JQuery](https://jquery.com/) - Agregar comportamiento a los componentes de la UI.
 - Cuadros de Confirmación: [jquery-confirm](https://craftpip.github.io/jquery-confirm/) - Cuadros de dialogos animados para confirmar procesos.
 - Iconos: [Font Awesome](https://fontawesome.com/) - Mejorar la experiencia de usuario.
 - Dashboard: [AdminLTE](https://adminlte.io/) - Plantilla para el Panel de Administración.
 - Tablas de Información: [DataTables](https://datatables.net/) - Facilita la presentación e interación con la información, utilizando tablas responsivas.
-- Selección de Fechas: [DateRangePicker](https://www.daterangepicker.com/) - Mejorar la experiencia del usuario al ingresar fechas en los formularios.
 - Framework de Diseño: [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Facilitar una interfaz agradable y responsiva.
-- Caja de Selección: [Select2](https://select2.org/) - Facilitar la presentación de información en las cajas de selección.
+- Alertas personalizadas: [SweetAlert2](https://sweetalert2.github.io/) - Cuadros de alertas responsivos y llamativos.
   
 ## Dominio
 
-Gestionar usuarios, categorías, productos, clientes, ventas, generar reportes.
-- Solo un usuario con privilegios de administrador puede crear nuevos usuarios, desde dentro del sistema.
-- Los usuarios pueden iniciar sesión, restablecer su contraseña, editar su perfil.
-- Un usuario puede crear, actualizar, listar, eliminar categorías.
-- Un usuario puede crear, actualizar, listar, eliminar productos, cada productos pertenece a una categoría.
-- Un usuario puede crear, actualizar, listar, eliminar clientes.
-- Un usuario puede crear, actualizar, listar, eliminar, imprimir en pdf las ventas.
-- Cada venta contiene información sobre los productos vendidos y sobre el cliente que compra dichos productos.
-- Un usuario puede generar reportes de las ventas acorde a un rango de fechas y exportarlos en formato excel o pdf.
+Cualquier usuario puede acceder a las funcionalidades del sistema. 
+- Un usuario ingresa su problema o relato acerda del sistema que quiere construir, utilizando una caja de texto, cargar un archivo de texto o hablando.
+- El relato del usuario es procesado para generar las posibles acciones.
+- Cada acción es filtrada y confirmada por el usuario para que puedan ser convertidas en Historias de Usuario.
+- Las Historias de Usuario pueden ser ordenadas de acuerdo a una prioridad.
+- Las Historias de Usuario que tengan mas relación se agrupan para formar un Microservicio.
+- Estos microservicios pueden tener dependencia con otros.
 
-### Usuario
+### Relato de Usuario
 
-| Campo      | Tipo    | Descripción                 |
-|------------|---------|-----------------------------|
-| id         | UUID    | Identificar único           |
-| image      | Varchar | Imagen del Usuario          |
-| token      | UUID    | Token de Acceso del Usuario |
-| username   | Varchar | Nombre de Usuario           |
-| first_name | Varchar | Primer Nombre del Usuario   |
-| last_name  | Varchar | Apellido del Usuario        |
-| email      | Varchar | Email del Usuario           |
-| password   | Varchar | Contraseña del Usuario      |
+| Campo         | Tipo    | Descripción        |
+|---------------|---------|--------------------|
+| id            | UUID    | Identificar único  |
+| relatoUsuario | Varchar | Relato del Usuario |
 
-### Categoría
+### Historia de Usuario
 
-| Campo         | Tipo    | Descripción                 |
-|---------------|---------|-----------------------------|
-| id            | UUID    | Identificar único           |
-| nombre        | Varchar | Nombre de la Categoría      |
-| desc          | Varchar | Descripción de la Categoría |
-| user_creation | Usuario | Usuario de la Categoría     |
+| Campo     | Tipo    | Descripción                         |
+|-----------|---------|-------------------------------------|
+| id        | UUID    | Identificador único                 |
+| actor     | Varchar | Actor de la Historia de Usuario     |
+| accion    | Varchar | Acción de la Historia de Usuario    |
+| proposito | Varchar | Propósito de la Historia de Usuario |
 
-### Producto
+### Acción
 
-| Campo  | Tipo      | Descripción            |
-|--------|-----------|------------------------|
-| id     | UUID      | Identificar único      |
-| nombre | Varchar   | Nombre del Producto    |
-| image  | Varchar   | Imagen del Producto    |
-| stock  | Integer   | Cantidad del Producto  |
-| pvp    | Decimal   | Precio del Producto    |
-| cat    | Categoría | Categoría del Producto |
-
-### Cliente
-
-| Campo         | Tipo     | Descripción                     |
-|---------------|----------|---------------------------------|
-| id            | UUID     | Identificar único               |
-| nombres       | Varchar  | Nombres del Cliente             |
-| apellidos     | Varchar  | Apellidos del Cliente           |
-| dni           | Varchar  | Cédula del Cliente              |
-| date_birthday | DateTime | Fecha de Nacimiento del Cliente |
-| address       | Varchar  | Dirección del Cliente           |
-| gender        | Varchar  | Género del Cliente              |
-
-### Venta
-
-| Campo       | Tipo     | Descripción                  |
-|-------------|----------|------------------------------|
-| id          | UUID     | Identificar único            |
-| date_joined | DateTime | Fecha de Creación            |
-| subtotal    | Decimal  | Precio Sub-total de la Venta |
-| iva         | Decimal  | IVA de la Venta              |
-| total       | Decimal  | Precio Total de la Venta     |
-| cli         | Cliente  | Cliente de la Venta          |
-
-### Descripción de la Venta
-
-| Campo    | Tipo     | Descripción                                     |
-|----------|----------|-------------------------------------------------|
-| id       | UUID     | Identificar único                               |
-| price    | Decimal  | Precio del Producto                             |
-| cant     | Integer  | Cantidad a vender                               |
-| subtotal | Decimal  | Precio Sub-total de la venta de este producto/s |
-| sale     | Venta    | Venta de la Descripción de la Venta             |
-| prod     | Producto | Producto de la Descripción de la Venta          |
+| Campo    | Tipo     | Descripción                  |
+|----------|----------|------------------------------|
+| id       | UUID     | Identificar único            |
+| actor    | Varchar  | Actor de la acción           |
+| que      | Varchar  | El qué de la acción          |
+| para_que | Varchar  | El objetivo de la acción     |
+| grupo    | Integer  | Número de Grupo de la acción |
+| nombre   | Varchar  | Nombre de la acción          |
+| aux      | Auxiliar | Auxiliar de la acción        |
 
 ## Funciones
 <table>
@@ -246,7 +203,7 @@ Gestionar usuarios, categorías, productos, clientes, ventas, generar reportes.
 
 
 ## Autor
-Codificado por [Bryan Jhoel Tarco Taipe](https://github.com/bnphony), basado en el tutorial [Curso de Django3](https://youtu.be/XclfcvFjN48?si=cKXKIUnwvoaoEQpc) por [William Jair Dávila Vargas](https://algorisoft.com/)
+Creado por [Universidad Técnica de Cotopaxi](https://www.utc.edu.ec/), codificado por [Bryan Jhoel Tarco Taipe](https://github.com/bnphony)
 
 ### Contacto
 <a href="https://www.linkedin.com/in/bryan-tarco01" rel="noopener noreferrer" target="_blank">
@@ -262,5 +219,5 @@ Codificado por [Bryan Jhoel Tarco Taipe](https://github.com/bnphony), basado en 
 
 
 ## Licencia de Uso
-Este repositorio y todo su contenido está licenciado bajo licencia **Creative Commons**. Por favor si compartes, usas o modificas este proyecto cita a sus
-autores, y usa las mismas condiciones para su uso docente, formativo o educativo y no comercial.
+Este repositorio y todo su contenido está licenciado bajo licencia **Creative Commons**. Por favor si compartes, usas o modificas este proyecto cita a su
+autor, y usa las mismas condiciones para su uso docente, formativo o educativo y no comercial.
