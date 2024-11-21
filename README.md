@@ -4,7 +4,7 @@
 </div>
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/general.PNG" width="80%" alt="Main Screen">
+  <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/general.PNG" width="80%" alt="Main Screen">
   <br/><br/>
   
   ![GitHub](https://img.shields.io/github/last-commit/bnphony/Sistema-Inventario)
@@ -20,53 +20,50 @@
 
 ## Indice
 
-- [Sistema de Inventario](#sistema-de-inventario)
+- [Procesamiento del Lenguaje Natural](#procesamiento-del-lenguaje-natural)
   - [Descripción](#descripción)
      - [Tecnologías](#tecnologías)
   - [Dominio](#dominio)
-     - [Usuario](#usuario)
-     - [Categoría](#categoría)
-     - [Producto](#producto)
-     - [Cliente](#cliente)
-     - [Venta](#venta)
-     - [Descripción de la Venta](#descripción-de-la-venta)
+     - [Relato de Usuario](#relato-de-usuario)
+     - [Historia de Usuario](#historia-de-usuario)
+     - [Acción](#acción)
   - [Funciones](#funciones)
   - [Autor](#autor)
      - [Contacto](#contacto)
   - [Licencia de Uso](#licencia-de-uso)
  
 ## Descripción
-Prototipo para generar micro servicios a travez de un relato de usuario utilizando el Procesamiento del Lenguaje Natural. Funciones Principales:
-- Ingresar un relato de usuario utilizando, una caja de texto, subir un archivo de text, reconocimiento de voz(voz a texto).
-- Encontrar las acciones del relato del usuario.
-- Transformar las acciones en Historias de Usuario.
-- Agrupar las Historias de Usuario relacionadas para crear un microservicio.
-- Calcular la posible dependencia que existe entre los microservicios.
-- Cada Historia de Usuario se representa como un nodo y cada microservicio como una caja de las continiene, las historias de usuario relacionadas se conectan mediante links.
+Prototipo para generar micro servicios a través de un relato de usuario utilizando el Procesamiento del Lenguaje Natural. Funciones Principales:
+- Ingresar un relato de usuario utilizando: una caja de texto, subir un archivo de texto, utilizar el micrófono, o subir un archivo de audio.
+- Encontrar las Historias de Usuario en base al relato ingresado.
+- Transformar las Historias de Usuario en funciones con su prioridad respectiva.
+- Agrupar las Historias de Usuario relacionadas para crear un micro servicio.
+- Calcular la posible dependencia que existe entre los micro servicios.
+- Cada Historia de Usuario se representa como un nodo y cada micro servicio como una caja de las contiene, las historias de usuario relacionadas se conectan mediante links.
    
 ### Tecnologías
 
 - Lenguaje del lado del Servidor: [Python](https://www.python.org/) - Interactuar con la base de datos, gestionar las peticiones del usuario.
 - Web Framework: [Django](https://www.djangoproject.com/) - Facilitar el desarrollo web.
-- Visualización de Información: [D3js](https://d3js.org/) - Graficar, agrupar y presentar la posible dependencia que existe entre los micoservicios.
+- Visualización de Información: [D3js](https://d3js.org/) - Gráfica, agrupa y presenta la posible dependencia que existe entre los Micro servicios.
 - Base de Datos: [PostgreSQL](https://www.postgresql.org/) - Almacenar el relato del usuario, las historias de usuario y las acciones.
 - Interacción con la Interfaz: [Java](https://www.java.com/es/) y [JQuery](https://jquery.com/) - Agregar comportamiento a los componentes de la UI.
-- Cuadros de Confirmación: [jquery-confirm](https://craftpip.github.io/jquery-confirm/) - Cuadros de dialogos animados para confirmar procesos.
+- Cuadros de Confirmación: [jquery-confirm](https://craftpip.github.io/jquery-confirm/) - Cuadros de diálogos animados para confirmar procesos.
 - Iconos: [Font Awesome](https://fontawesome.com/) - Mejorar la experiencia de usuario.
 - Dashboard: [AdminLTE](https://adminlte.io/) - Plantilla para el Panel de Administración.
-- Tablas de Información: [DataTables](https://datatables.net/) - Facilita la presentación e interación con la información, utilizando tablas responsivas.
+- Tablas de Información: [DataTables](https://datatables.net/) - Facilita la presentación e interacción con la información, utilizando tablas responsivas.
 - Framework de Diseño: [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Facilitar una interfaz agradable y responsiva.
 - Alertas personalizadas: [SweetAlert2](https://sweetalert2.github.io/) - Cuadros de alertas responsivos y llamativos.
   
 ## Dominio
 
 Cualquier usuario puede acceder a las funcionalidades del sistema. 
-- Un usuario ingresa su problema o relato acerda del sistema que quiere construir, utilizando una caja de texto, cargar un archivo de texto o hablando.
-- El relato del usuario es procesado para generar las posibles acciones.
-- Cada acción es filtrada y confirmada por el usuario para que puedan ser convertidas en Historias de Usuario.
-- Las Historias de Usuario pueden ser ordenadas de acuerdo a una prioridad.
-- Las Historias de Usuario que tengan mas relación se agrupan para formar un Microservicio.
-- Estos microservicios pueden tener dependencia con otros.
+- Un usuario ingresa su problema o relato acerca del sistema que quiere construir, utilizando una caja de texto, cargar un archivo de texto/audio o hablando.
+- El relato del usuario es procesado para generar las posibles historias de usuario.
+- Cada historia de usuario es filtrada y confirmada por el usuario para que puedan ser convertidas en funciones.
+- Las funciones pueden ser ordenadas de acuerdo a la prioridad.
+- Las Historias de Usuario que tengan mas relación se agrupan para formar un Micro servicio.
+- Estos Micro servicios pueden tener dependencia con otros.
 
 ### Relato de Usuario
 
@@ -97,103 +94,71 @@ Cualquier usuario puede acceder a las funcionalidades del sistema.
 | aux      | Auxiliar | Auxiliar de la acción        |
 
 ## Funciones
+
 <table>
-  
   <tr>
-    <td width="50%">
-      <h3 align="center">Iniciar Sesión</h3>
+    <td width="100%">
+      <h3 align="center">Ingresar el relato del Usuario</h3>
       <div align="center">
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/login.PNG" width="80%" alt="Login">
+        <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/relato_usuario.PNG" width="80%" alt="User Story">
         <p>
-          - Un Usuario puede iniciar sesión con su nombre de usuario y contraseña.
-        </p>
-      </div>
-    </td>
-    <td width="50%">
-      <h3 align="center">Restablecer Contraseña</h3>
-      <div align="center">
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/reset_password.PNG" width="80%" alt="Reset Password">
-        <p>
-          - Un Usuario puede cambiar su contraseña utilizando su nombre nombre de usuario, con esto se le envía un link a su email con el procedimiento correspondiente.
-        </p>
-      </div>
-    </td>
-  
-  <tr>
-    <td witdh="100%" colspan="2">
-      <h3 align="center">Gestionar Categorías</h3>
-      <div align="center">
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/categorias.PNG" width="80%" alt="Categories">
-        <p>
-          - Crear, actualizar, listar, eliminar categorías.
+          - Pantalla Principal donde el usuario puede ingresar todos los requerimientos que necesite para su proyecto. Esto en formato de historia normal, sin reglas ni restricciones.
         </p>
       </div>
     </td>
   </tr>
   
   <tr>
-    <td width="100%" colspan="2">
-      <h3 align="center">Gestionar Productos</h3>
+    <td witdh="100%">
+      <h3 align="center">Opciones para ingresar el relato del Usuario</h3>
       <div align="center">
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/productos.PNG" width="80%" alt="Products">
+        <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/opciones_ingreso.PNG" width="80%" alt="Input Options">
         <p>
-          - Crear, actualizar, listar, eliminar productos.
+          - Formas de ingresar el relato del usuario: 1) Caja de Texto, 2) Utilizar el micrófono para grabar la voz del usuario, 3) Subir un archivo de texto, 4) Subir un archivo de audio (.mp3).
         </p>
       </div>
     </td>
   </tr>
   
   <tr>
-    <td width="100%" colspan="2">
-      <h3 align="center">Gestionar Clientes</h3>
+    <td width="100%">
+      <h3 align="center">Historias de Usuario Encontradas</h3>
       <div align="center">
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/clientes.PNG" width="80%" alt="Clients">
+        <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/hu.PNG" width="80%" alt="UH Founded">
         <p>
-          - Crear, actualizar, listar, eliminar clientes.
+          - Presentación de las Historias de Usuario encontradas en base al relato ingresado.<br/>
+          - El usuario puede eliminar las que tengan errores o que no esten correctas de acuerdo a su critério.
         </p>
       </div>
     </td>
   </tr>
   
   <tr>
-    <td width="100%" colspan="2">
-      <h3 align="center">Gestionar Ventas</h3>
+    <td width="100%">
+      <h3 align="center">Product Backlog</h3>
       <div align="center">
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/ventas.PNG" width="80%" alt="Sales">
+        <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/backlog.PNG" width="80%" alt="Product Backlog">
         <p>
-          - Crear, actualizar, listar, eliminar ventas.          
+          - Lista de funciones creadas en base a las Historias de Usuario aceptadas por el usuario. <br/>
+          - El usuario puede arrastras cada función para cambiar su prioridad.
+        </p>
+      </div>
+    </td>
+  </tr>
+  
+  <tr>
+    <td width="100%">
+      <h3 align="center">Grafico de los Micro Servicios y su posible Dependencia</h3>
+      <div align="center">
+        <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/microservicios.PNG" width="80%" alt="Micro Services">
+        <p>
+          - Mostrar los posibles Micro servicios y su dependencia encontrados por el sistema en base al relato del usuario.
         </p>
         <br/>
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/detalle_venta.PNG" width="80%" alt="Sales">
+        <img src="https://raw.githubusercontent.com/bnphony/Procesamiento-Lenguaje-Natural/master/prueba_2/static/img/opciones_relato.PNG" width="80%" alt="UH Information">
         <p>
-          - Descripción de la venta: productos vendidos, cliente, fecha de la venta, subtotal, IVA y precio total.   
-        </p>
-      </div>
-    </td>
-  </tr>
-  
-  <tr>
-    <td witdh="100%" colspan="2">
-      <h3 align="center">Generación de Reportes de Ventas</h3>
-      <div align="center">
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/date_picker.PNG" width="40%" alt="Date Range">
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/reporte.PNG" width="40%" alt="Report">
-        <p>
-          - El usuario puede escoger el rango de fecha de los reportes.
-          - Opciones para descargar el reporte en formato excel o pdf.
-        </p>
-      </div>
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="100%" colspan="2">
-      <h3 align="center">Gestionar Usuarios</h3>
-      <div align="center">
-        <img src="https://raw.githubusercontent.com/bnphony/Sistema-Inventario/master/proyecto1/static/img/usuarios.PNG" width="80%" alt="Users">
-        <p>
-          - Crear, actualizar, listar, eliminar usuarios. <br/>
-          - Solo los usuarios de tipo administrador pueden acceder a esta opción.
+          - Al hacer click sobre una Historia de Usuario(nodo), se abre un cuadro de diálogo con su nombre, descripción y dependencias. <br/>
+          - Para una mejor visualización de las conexiones(links) los nodos pueden ser arrastrados momentaneamente.
         </p>
       </div>
     </td>
